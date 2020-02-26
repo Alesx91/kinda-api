@@ -1,7 +1,7 @@
 package IngoingPB
 
 import (
-	"kinda-api/go/OutgoingPB"
+	"github.com/alesx91/kinda-api/go/OutgoingPB"
 )
 
 func (m *AuthPB) Validate() *OutgoingPB.PBValidation {
