@@ -1,4 +1,4 @@
-module kinda-api
+module github.com/alesx91/kinda-api
 
 go 1.13
 
