@@ -1,0 +1,6 @@
+github.com/alesx91/kinda-common v1.0.1 h1:Qn9U6U28DJu4RWBBlVosQchiMg1ovLH/bF7Wge6owmM=
+github.com/alesx91/kinda-common v1.0.1/go.mod h1:6s2fm6+33ks6B7KtFYdr1+FRKfWyOUxH+Sg1BGi0Xgg=
+github.com/golang/protobuf v1.3.4 h1:87PNWwrRvUSnqS4dlcBU/ftvOIBep4sYuBLlh6rX2wk=
+github.com/golang/protobuf v1.3.4/go.mod h1:vzj43D7+SQXF/4pzW/hwtAqwc6iTitCiVSaWz5lYuqw=
+github.com/metakeule/fmtdate v1.1.2 h1:n9M7H9HfAqp+6OA98wXGMdcAr6omshSNVct65Bks1lQ=
+github.com/metakeule/fmtdate v1.1.2/go.mod h1:2JyMFlKxeoGy1qS6obQukT0AL0Y4iNANQL8scbSdT4E=
