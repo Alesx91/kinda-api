@@ -1,0 +1,32 @@
+// [START declaration]
+syntax = "proto3";
+package KindaGRPC;
+// [END declaration]
+
+// [START authorization]
+message AuthResponsePB {
+    string sid = 2;
+}
+
+message RegistrationResponsePB {
+}
+
+enum DTOValidationErrorCodePB {
+    NOT_NULL = 0;
+    NOT_EMPTY = 1;
+    PATTERN_NOT_MATCHED = 2;
+    NOT_ACCEPTED = 3;
+    WRONG_ARRAY_SIZE = 4;
+}
+
+message DTOValidationResponsePB {
+    DTOValidationErrorCodePB code = 1;
+    string dtoName = 2;
+    string dtoField = 3;
+    string pattern = 4;
+}
+
+message CollectionDTOValidationResponsePB {
+    repeated DTOValidationResponsePB dtoValidation = 1;
+}
+// [END - authorization]

@@ -1,0 +1,43 @@
+// [START declaration]
+syntax = "proto3";
+package KindaGRPC;
+// [END declaration]
+
+// [START authorization]
+message AuthRequestPB {
+    string token = 1;
+}
+
+message RegistrationRequestPB {
+    string token = 1;
+    string username = 2;
+    GenderPB gender = 3;
+    string birthDay = 4;
+    LocationPB location = 5;
+    repeated int32 personalityTest = 6 [packed = true];
+    SearchParamsPB searchParams = 7;
+}
+
+enum GenderPB {
+    FEMALE = 0;
+    MALE = 1;
+}
+
+message LocationPB {
+    double lat = 5;
+    double lon = 6;
+}
+
+enum GenderPreferencePB {
+    PREF_FEMALE = 0;
+    PREF_MALE = 1;
+    PREF_BOTH = 2;
+}
+
+message SearchParamsPB {
+    GenderPreferencePB gender = 1;
+    int32 minAge = 2;
+    int32 maxAge = 3;
+    int32 maxDistance = 4;
+}
+// [END authorization]

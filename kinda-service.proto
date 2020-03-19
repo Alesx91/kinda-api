@@ -1,0 +1,9 @@
+syntax = "proto3";
+package KindaGRPC;
+import "kinda-ongoing.proto";
+import "kinda-outgoing.proto";
+
+service Kinda {
+    rpc auth (AuthRequestPB) returns (AuthResponsePB);
+    rpc registration (RegistrationRequestPB) returns (RegistrationResponsePB);
+}
