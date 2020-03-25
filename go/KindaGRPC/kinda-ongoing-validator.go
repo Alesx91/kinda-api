@@ -12,6 +12,7 @@ var birthdayRegex = regexp.MustCompile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|
 func (m *AuthRequestPB) Validate() *PBValidation {
 	var result = NewPBValidation()
 
+	//validate token
 	if m.GetToken() == "" {
 		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "AuthRequestPB", "Token", "string")
 	}
@@ -21,6 +22,11 @@ func (m *AuthRequestPB) Validate() *PBValidation {
 
 func (m *RegistrationRequestPB) Validate() *PBValidation {
 	var result = NewPBValidation()
+
+	//validate token
+	if m.GetToken() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "RegistrationRequestPB", "Token", "string")
+	}
 
 	//validating username
 	if !nameRegex.MatchString(m.GetUsername()) {
@@ -93,6 +99,17 @@ func (m *SearchParamsPB) Validate() *PBValidation {
 	//validate
 	if m.GetMaxDistance() < 20 || m.GetMaxDistance() > 151 {
 		result.AddError(DTOValidationErrorCodePB_NOT_ACCEPTED, "SearchParamsPB", "MaxDistance", "int: 20 <= MaxDistance <= 151")
+	}
+
+	return result
+}
+
+func (m *VerificationRequestPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate token
+	if m.GetToken() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "VerificationRequestPB", "Token", "string")
 	}
 
 	return result

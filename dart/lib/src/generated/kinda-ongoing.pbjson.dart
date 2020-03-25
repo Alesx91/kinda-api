@@ -49,6 +49,24 @@ const RegistrationRequestPB$json = const {
   ],
 };
 
+const VerificationRequestPB$json = const {
+  '1': 'VerificationRequestPB',
+  '2': const [
+    const {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+    const {'1': 'orderedPhotoMap', '3': 2, '4': 3, '5': 11, '6': '.KindaGRPC.VerificationRequestPB.OrderedPhotoMapEntry', '10': 'orderedPhotoMap'},
+  ],
+  '3': const [VerificationRequestPB_OrderedPhotoMapEntry$json],
+};
+
+const VerificationRequestPB_OrderedPhotoMapEntry$json = const {
+  '1': 'OrderedPhotoMapEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 5, '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 const LocationPB$json = const {
   '1': 'LocationPB',
   '2': const [

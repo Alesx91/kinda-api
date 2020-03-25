@@ -133,6 +133,41 @@ class RegistrationRequestPB extends $pb.GeneratedMessage {
   SearchParamsPB ensureSearchParams() => $_ensure(6);
 }
 
+class VerificationRequestPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('VerificationRequestPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'token')
+    ..m<$core.String, $core.int>(2, 'orderedPhotoMap', protoName: 'orderedPhotoMap', entryClassName: 'VerificationRequestPB.OrderedPhotoMapEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('KindaGRPC'))
+    ..hasRequiredFields = false
+  ;
+
+  VerificationRequestPB._() : super();
+  factory VerificationRequestPB() => create();
+  factory VerificationRequestPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VerificationRequestPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  VerificationRequestPB clone() => VerificationRequestPB()..mergeFromMessage(this);
+  VerificationRequestPB copyWith(void Function(VerificationRequestPB) updates) => super.copyWith((message) => updates(message as VerificationRequestPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static VerificationRequestPB create() => VerificationRequestPB._();
+  VerificationRequestPB createEmptyInstance() => create();
+  static $pb.PbList<VerificationRequestPB> createRepeated() => $pb.PbList<VerificationRequestPB>();
+  @$core.pragma('dart2js:noInline')
+  static VerificationRequestPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerificationRequestPB>(create);
+  static VerificationRequestPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, $core.int> get orderedPhotoMap => $_getMap(1);
+}
+
 class LocationPB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('LocationPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..a<$core.double>(5, 'lat', $pb.PbFieldType.OD)

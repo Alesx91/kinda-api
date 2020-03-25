@@ -13,6 +13,27 @@ import 'kinda-outgoing.pbenum.dart';
 
 export 'kinda-outgoing.pbenum.dart';
 
+class EmptyResponsePB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('EmptyResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  EmptyResponsePB._() : super();
+  factory EmptyResponsePB() => create();
+  factory EmptyResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EmptyResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  EmptyResponsePB clone() => EmptyResponsePB()..mergeFromMessage(this);
+  EmptyResponsePB copyWith(void Function(EmptyResponsePB) updates) => super.copyWith((message) => updates(message as EmptyResponsePB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static EmptyResponsePB create() => EmptyResponsePB._();
+  EmptyResponsePB createEmptyInstance() => create();
+  static $pb.PbList<EmptyResponsePB> createRepeated() => $pb.PbList<EmptyResponsePB>();
+  @$core.pragma('dart2js:noInline')
+  static EmptyResponsePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EmptyResponsePB>(create);
+  static EmptyResponsePB _defaultInstance;
+}
+
 class AuthResponsePB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('AuthResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..aOS(2, 'sid')
@@ -42,27 +63,6 @@ class AuthResponsePB extends $pb.GeneratedMessage {
   $core.bool hasSid() => $_has(0);
   @$pb.TagNumber(2)
   void clearSid() => clearField(2);
-}
-
-class RegistrationResponsePB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('RegistrationResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  RegistrationResponsePB._() : super();
-  factory RegistrationResponsePB() => create();
-  factory RegistrationResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RegistrationResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  RegistrationResponsePB clone() => RegistrationResponsePB()..mergeFromMessage(this);
-  RegistrationResponsePB copyWith(void Function(RegistrationResponsePB) updates) => super.copyWith((message) => updates(message as RegistrationResponsePB));
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static RegistrationResponsePB create() => RegistrationResponsePB._();
-  RegistrationResponsePB createEmptyInstance() => create();
-  static $pb.PbList<RegistrationResponsePB> createRepeated() => $pb.PbList<RegistrationResponsePB>();
-  @$core.pragma('dart2js:noInline')
-  static RegistrationResponsePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegistrationResponsePB>(create);
-  static RegistrationResponsePB _defaultInstance;
 }
 
 class DTOValidationResponsePB extends $pb.GeneratedMessage {

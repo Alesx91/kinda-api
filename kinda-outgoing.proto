@@ -3,12 +3,11 @@ syntax = "proto3";
 package KindaGRPC;
 // [END declaration]
 
+message EmptyResponsePB {}
+
 // [START authorization]
 message AuthResponsePB {
     string sid = 2;
-}
-
-message RegistrationResponsePB {
 }
 
 enum DTOValidationErrorCodePB {

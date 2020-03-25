@@ -16,15 +16,15 @@ const DTOValidationErrorCodePB$json = const {
   ],
 };
 
+const EmptyResponsePB$json = const {
+  '1': 'EmptyResponsePB',
+};
+
 const AuthResponsePB$json = const {
   '1': 'AuthResponsePB',
   '2': const [
     const {'1': 'sid', '3': 2, '4': 1, '5': 9, '10': 'sid'},
   ],
-};
-
-const RegistrationResponsePB$json = const {
-  '1': 'RegistrationResponsePB',
 };
 
 const DTOValidationResponsePB$json = const {

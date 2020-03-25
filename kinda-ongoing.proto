@@ -18,6 +18,11 @@ message RegistrationRequestPB {
     SearchParamsPB searchParams = 7;
 }
 
+message VerificationRequestPB {
+    string token = 1;
+    map<string, int32> orderedPhotoMap = 2;
+}
+
 enum GenderPB {
     FEMALE = 0;
     MALE = 1;

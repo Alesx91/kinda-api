@@ -20,11 +20,17 @@ class KindaClient extends $grpc.Client {
       ($0.AuthRequestPB value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.AuthResponsePB.fromBuffer(value));
   static final _$registration =
-      $grpc.ClientMethod<$0.RegistrationRequestPB, $1.RegistrationResponsePB>(
+      $grpc.ClientMethod<$0.RegistrationRequestPB, $1.EmptyResponsePB>(
           '/KindaGRPC.Kinda/registration',
           ($0.RegistrationRequestPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $1.RegistrationResponsePB.fromBuffer(value));
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$verification =
+      $grpc.ClientMethod<$0.VerificationRequestPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/verification',
+          ($0.VerificationRequestPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
 
   KindaClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -36,11 +42,20 @@ class KindaClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$1.RegistrationResponsePB> registration(
+  $grpc.ResponseFuture<$1.EmptyResponsePB> registration(
       $0.RegistrationRequestPB request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$registration, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> verification(
+      $0.VerificationRequestPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$verification, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -57,15 +72,24 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.AuthRequestPB.fromBuffer(value),
         ($1.AuthResponsePB value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.RegistrationRequestPB,
-            $1.RegistrationResponsePB>(
-        'registration',
-        registration_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.RegistrationRequestPB.fromBuffer(value),
-        ($1.RegistrationResponsePB value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.RegistrationRequestPB, $1.EmptyResponsePB>(
+            'registration',
+            registration_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.RegistrationRequestPB.fromBuffer(value),
+            ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.VerificationRequestPB, $1.EmptyResponsePB>(
+            'verification',
+            verification_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.VerificationRequestPB.fromBuffer(value),
+            ($1.EmptyResponsePB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -73,14 +97,20 @@ abstract class KindaServiceBase extends $grpc.Service {
     return auth(call, await request);
   }
 
-  $async.Future<$1.RegistrationResponsePB> registration_Pre(
-      $grpc.ServiceCall call,
+  $async.Future<$1.EmptyResponsePB> registration_Pre($grpc.ServiceCall call,
       $async.Future<$0.RegistrationRequestPB> request) async {
     return registration(call, await request);
   }
 
+  $async.Future<$1.EmptyResponsePB> verification_Pre($grpc.ServiceCall call,
+      $async.Future<$0.VerificationRequestPB> request) async {
+    return verification(call, await request);
+  }
+
   $async.Future<$1.AuthResponsePB> auth(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
-  $async.Future<$1.RegistrationResponsePB> registration(
+  $async.Future<$1.EmptyResponsePB> registration(
       $grpc.ServiceCall call, $0.RegistrationRequestPB request);
+  $async.Future<$1.EmptyResponsePB> verification(
+      $grpc.ServiceCall call, $0.VerificationRequestPB request);
 }
