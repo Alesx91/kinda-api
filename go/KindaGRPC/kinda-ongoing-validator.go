@@ -41,6 +41,8 @@ func (m *RegistrationRequestPB) Validate() *PBValidation {
 	//validating birthday
 	if !birthdayRegex.MatchString(m.GetBirthDay()) {
 		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "RegistrationRequestPB", "BirthDay", birthdayRegex.String())
+	} else if kindaCommon.CalculateAge(m.GetBirthDay()) < 18 {
+		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "RegistrationRequestPB", "BirthDay", "age >= 18")
 	}
 
 	//validate location

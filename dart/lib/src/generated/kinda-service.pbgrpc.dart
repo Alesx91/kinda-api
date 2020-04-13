@@ -31,6 +31,12 @@ class KindaClient extends $grpc.Client {
           ($0.VerificationRequestPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
+  static final _$notifyRejection =
+      $grpc.ClientMethod<$0.AuthRequestPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/notifyRejection',
+          ($0.AuthRequestPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
 
   KindaClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -56,6 +62,15 @@ class KindaClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$verification, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> notifyRejection(
+      $0.AuthRequestPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$notifyRejection, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -90,6 +105,13 @@ abstract class KindaServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.VerificationRequestPB.fromBuffer(value),
             ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AuthRequestPB, $1.EmptyResponsePB>(
+        'notifyRejection',
+        notifyRejection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AuthRequestPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -107,10 +129,17 @@ abstract class KindaServiceBase extends $grpc.Service {
     return verification(call, await request);
   }
 
+  $async.Future<$1.EmptyResponsePB> notifyRejection_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.AuthRequestPB> request) async {
+    return notifyRejection(call, await request);
+  }
+
   $async.Future<$1.AuthResponsePB> auth(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
   $async.Future<$1.EmptyResponsePB> registration(
       $grpc.ServiceCall call, $0.RegistrationRequestPB request);
   $async.Future<$1.EmptyResponsePB> verification(
       $grpc.ServiceCall call, $0.VerificationRequestPB request);
+  $async.Future<$1.EmptyResponsePB> notifyRejection(
+      $grpc.ServiceCall call, $0.AuthRequestPB request);
 }
