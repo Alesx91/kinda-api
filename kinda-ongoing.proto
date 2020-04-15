@@ -35,8 +35,8 @@ message LocationPB {
 
 enum GenderPreferencePB {
     PREF_FEMALE = 0;
-    PREF_MALE = 1;
-    PREF_BOTH = 2;
+    PREF_BOTH = 1;
+    PREF_MALE = 2;
 }
 
 message SearchParamsPB {

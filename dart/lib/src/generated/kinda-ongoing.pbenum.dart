@@ -26,13 +26,13 @@ class GenderPB extends $pb.ProtobufEnum {
 
 class GenderPreferencePB extends $pb.ProtobufEnum {
   static const GenderPreferencePB PREF_FEMALE = GenderPreferencePB._(0, 'PREF_FEMALE');
-  static const GenderPreferencePB PREF_MALE = GenderPreferencePB._(1, 'PREF_MALE');
-  static const GenderPreferencePB PREF_BOTH = GenderPreferencePB._(2, 'PREF_BOTH');
+  static const GenderPreferencePB PREF_BOTH = GenderPreferencePB._(1, 'PREF_BOTH');
+  static const GenderPreferencePB PREF_MALE = GenderPreferencePB._(2, 'PREF_MALE');
 
   static const $core.List<GenderPreferencePB> values = <GenderPreferencePB> [
     PREF_FEMALE,
-    PREF_MALE,
     PREF_BOTH,
+    PREF_MALE,
   ];
 
   static final $core.Map<$core.int, GenderPreferencePB> _byValue = $pb.ProtobufEnum.initByValue(values);

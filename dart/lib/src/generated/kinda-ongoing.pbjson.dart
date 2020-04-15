@@ -17,8 +17,8 @@ const GenderPreferencePB$json = const {
   '1': 'GenderPreferencePB',
   '2': const [
     const {'1': 'PREF_FEMALE', '2': 0},
-    const {'1': 'PREF_MALE', '2': 1},
-    const {'1': 'PREF_BOTH', '2': 2},
+    const {'1': 'PREF_BOTH', '2': 1},
+    const {'1': 'PREF_MALE', '2': 2},
   ],
 };
 

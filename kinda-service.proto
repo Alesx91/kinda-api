@@ -7,5 +7,5 @@ service Kinda {
     rpc auth (AuthRequestPB) returns (AuthResponsePB);
     rpc registration (RegistrationRequestPB) returns (EmptyResponsePB);
     rpc verification (VerificationRequestPB) returns (EmptyResponsePB);
-    rpc notifyRejection (AuthRequestPB) returns (EmptyResponsePB);
+    rpc acknowledgeRejection (AuthRequestPB) returns (EmptyResponsePB);
 }

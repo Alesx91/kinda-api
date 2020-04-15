@@ -27,20 +27,20 @@ const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 func init() { proto.RegisterFile("kinda-service.proto", fileDescriptor_8495d10062b1f51c) }
 
 var fileDescriptor_8495d10062b1f51c = []byte{
-	// 197 bytes of a gzipped FileDescriptorProto
+	// 200 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0xce, 0xce, 0xcc, 0x4b,
 	0x49, 0xd4, 0x2d, 0x4e, 0x2d, 0x2a, 0xcb, 0x4c, 0x4e, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17,
 	0xe2, 0xf4, 0x06, 0x09, 0xba, 0x07, 0x05, 0x38, 0x4b, 0x41, 0xe5, 0xf3, 0xf3, 0xd2, 0xf3, 0x33,
-	0xf3, 0xd2, 0x21, 0xf2, 0x52, 0x22, 0x50, 0xc1, 0xd2, 0x12, 0x24, 0x51, 0xa3, 0x95, 0x4c, 0x5c,
+	0xf3, 0xd2, 0x21, 0xf2, 0x52, 0x22, 0x50, 0xc1, 0xd2, 0x12, 0x24, 0x51, 0xa3, 0x75, 0x4c, 0x5c,
 	0xac, 0x60, 0x8d, 0x42, 0xd6, 0x5c, 0x2c, 0x89, 0xa5, 0x25, 0x19, 0x42, 0x12, 0x7a, 0x70, 0x83,
 	0xf4, 0x1c, 0x4b, 0x4b, 0x32, 0x82, 0x52, 0x0b, 0x4b, 0x53, 0x8b, 0x4b, 0x02, 0x9c, 0xa4, 0x24,
 	0x31, 0x64, 0x8a, 0x0b, 0xf2, 0xf3, 0x8a, 0x53, 0x03, 0x9c, 0x84, 0x7c, 0xb8, 0x78, 0x8a, 0x52,
 	0xd3, 0x33, 0x8b, 0x4b, 0x8a, 0x12, 0x4b, 0x32, 0xf3, 0xf3, 0x84, 0x14, 0x90, 0x94, 0x06, 0x21,
 	0x49, 0x20, 0x0c, 0x93, 0x42, 0x52, 0xe1, 0x9a, 0x5b, 0x50, 0x52, 0x89, 0x6a, 0x5a, 0x59, 0x6a,
-	0x51, 0x66, 0x5a, 0x66, 0x32, 0xa6, 0x69, 0x61, 0x48, 0x12, 0xc4, 0x99, 0xe6, 0xce, 0xc5, 0x9f,
-	0x97, 0x5f, 0x92, 0x99, 0x56, 0x19, 0x94, 0x9a, 0x95, 0x9a, 0x0c, 0x36, 0x10, 0xb7, 0x1f, 0xf1,
-	0x18, 0x94, 0xc4, 0x06, 0x0e, 0x32, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x64, 0xaa, 0xc2,
-	0xd7, 0x7f, 0x01, 0x00, 0x00,
+	0x51, 0x66, 0x5a, 0x66, 0x32, 0xa6, 0x69, 0x61, 0x48, 0x12, 0xc4, 0x9a, 0x26, 0x92, 0x98, 0x9c,
+	0x9d, 0x97, 0x5f, 0x9e, 0x93, 0x9a, 0x92, 0x9e, 0x1a, 0x94, 0x9a, 0x95, 0x9a, 0x0c, 0x36, 0x15,
+	0xb7, 0x47, 0xf1, 0x98, 0x96, 0xc4, 0x06, 0x0e, 0x37, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff,
+	0xef, 0x4b, 0x35, 0xba, 0x84, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -58,7 +58,7 @@ type KindaClient interface {
 	Auth(ctx context.Context, in *AuthRequestPB, opts ...grpc.CallOption) (*AuthResponsePB, error)
 	Registration(ctx context.Context, in *RegistrationRequestPB, opts ...grpc.CallOption) (*EmptyResponsePB, error)
 	Verification(ctx context.Context, in *VerificationRequestPB, opts ...grpc.CallOption) (*EmptyResponsePB, error)
-	NotifyRejection(ctx context.Context, in *AuthRequestPB, opts ...grpc.CallOption) (*EmptyResponsePB, error)
+	AcknowledgeRejection(ctx context.Context, in *AuthRequestPB, opts ...grpc.CallOption) (*EmptyResponsePB, error)
 }
 
 type kindaClient struct {
@@ -96,9 +96,9 @@ func (c *kindaClient) Verification(ctx context.Context, in *VerificationRequestP
 	return out, nil
 }
 
-func (c *kindaClient) NotifyRejection(ctx context.Context, in *AuthRequestPB, opts ...grpc.CallOption) (*EmptyResponsePB, error) {
+func (c *kindaClient) AcknowledgeRejection(ctx context.Context, in *AuthRequestPB, opts ...grpc.CallOption) (*EmptyResponsePB, error) {
 	out := new(EmptyResponsePB)
-	err := c.cc.Invoke(ctx, "/KindaGRPC.Kinda/notifyRejection", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/KindaGRPC.Kinda/acknowledgeRejection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -110,7 +110,7 @@ type KindaServer interface {
 	Auth(context.Context, *AuthRequestPB) (*AuthResponsePB, error)
 	Registration(context.Context, *RegistrationRequestPB) (*EmptyResponsePB, error)
 	Verification(context.Context, *VerificationRequestPB) (*EmptyResponsePB, error)
-	NotifyRejection(context.Context, *AuthRequestPB) (*EmptyResponsePB, error)
+	AcknowledgeRejection(context.Context, *AuthRequestPB) (*EmptyResponsePB, error)
 }
 
 // UnimplementedKindaServer can be embedded to have forward compatible implementations.
@@ -126,8 +126,8 @@ func (*UnimplementedKindaServer) Registration(ctx context.Context, req *Registra
 func (*UnimplementedKindaServer) Verification(ctx context.Context, req *VerificationRequestPB) (*EmptyResponsePB, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Verification not implemented")
 }
-func (*UnimplementedKindaServer) NotifyRejection(ctx context.Context, req *AuthRequestPB) (*EmptyResponsePB, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method NotifyRejection not implemented")
+func (*UnimplementedKindaServer) AcknowledgeRejection(ctx context.Context, req *AuthRequestPB) (*EmptyResponsePB, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AcknowledgeRejection not implemented")
 }
 
 func RegisterKindaServer(s *grpc.Server, srv KindaServer) {
@@ -188,20 +188,20 @@ func _Kinda_Verification_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Kinda_NotifyRejection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Kinda_AcknowledgeRejection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthRequestPB)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(KindaServer).NotifyRejection(ctx, in)
+		return srv.(KindaServer).AcknowledgeRejection(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/KindaGRPC.Kinda/NotifyRejection",
+		FullMethod: "/KindaGRPC.Kinda/AcknowledgeRejection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(KindaServer).NotifyRejection(ctx, req.(*AuthRequestPB))
+		return srv.(KindaServer).AcknowledgeRejection(ctx, req.(*AuthRequestPB))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -223,8 +223,8 @@ var _Kinda_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Kinda_Verification_Handler,
 		},
 		{
-			MethodName: "notifyRejection",
-			Handler:    _Kinda_NotifyRejection_Handler,
+			MethodName: "acknowledgeRejection",
+			Handler:    _Kinda_AcknowledgeRejection_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
