@@ -3,6 +3,8 @@ syntax = "proto3";
 package KindaGRPC;
 // [END declaration]
 
+message EmptyRequestPB {}
+
 // [START authorization]
 message AuthRequestPB {
     string token = 1;

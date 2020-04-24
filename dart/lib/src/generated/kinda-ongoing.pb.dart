@@ -13,6 +13,27 @@ import 'kinda-ongoing.pbenum.dart';
 
 export 'kinda-ongoing.pbenum.dart';
 
+class EmptyRequestPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('EmptyRequestPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  EmptyRequestPB._() : super();
+  factory EmptyRequestPB() => create();
+  factory EmptyRequestPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EmptyRequestPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  EmptyRequestPB clone() => EmptyRequestPB()..mergeFromMessage(this);
+  EmptyRequestPB copyWith(void Function(EmptyRequestPB) updates) => super.copyWith((message) => updates(message as EmptyRequestPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static EmptyRequestPB create() => EmptyRequestPB._();
+  EmptyRequestPB createEmptyInstance() => create();
+  static $pb.PbList<EmptyRequestPB> createRepeated() => $pb.PbList<EmptyRequestPB>();
+  @$core.pragma('dart2js:noInline')
+  static EmptyRequestPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EmptyRequestPB>(create);
+  static EmptyRequestPB _defaultInstance;
+}
+
 class AuthRequestPB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('AuthRequestPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..aOS(1, 'token')

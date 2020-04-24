@@ -37,6 +37,12 @@ class KindaClient extends $grpc.Client {
           ($0.AuthRequestPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
+  static final _$searchActivityNotification =
+      $grpc.ClientMethod<$0.EmptyRequestPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/searchActivityNotification',
+          ($0.EmptyRequestPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
 
   KindaClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -71,6 +77,15 @@ class KindaClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$acknowledgeRejection, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> searchActivityNotification(
+      $0.EmptyRequestPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$searchActivityNotification, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -112,6 +127,13 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.AuthRequestPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EmptyRequestPB, $1.EmptyResponsePB>(
+        'searchActivityNotification',
+        searchActivityNotification_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EmptyRequestPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -134,6 +156,11 @@ abstract class KindaServiceBase extends $grpc.Service {
     return acknowledgeRejection(call, await request);
   }
 
+  $async.Future<$1.EmptyResponsePB> searchActivityNotification_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.EmptyRequestPB> request) async {
+    return searchActivityNotification(call, await request);
+  }
+
   $async.Future<$1.AuthResponsePB> auth(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
   $async.Future<$1.EmptyResponsePB> registration(
@@ -142,4 +169,6 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.VerificationRequestPB request);
   $async.Future<$1.EmptyResponsePB> acknowledgeRejection(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
+  $async.Future<$1.EmptyResponsePB> searchActivityNotification(
+      $grpc.ServiceCall call, $0.EmptyRequestPB request);
 }

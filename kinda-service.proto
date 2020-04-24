@@ -4,8 +4,12 @@ import "kinda-ongoing.proto";
 import "kinda-outgoing.proto";
 
 service Kinda {
+    //auth
     rpc auth (AuthRequestPB) returns (AuthResponsePB);
     rpc registration (RegistrationRequestPB) returns (EmptyResponsePB);
     rpc verification (VerificationRequestPB) returns (EmptyResponsePB);
     rpc acknowledgeRejection (AuthRequestPB) returns (EmptyResponsePB);
+
+    //search
+    rpc searchActivityNotification (EmptyRequestPB) returns (EmptyResponsePB);
 }

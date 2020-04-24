@@ -22,6 +22,10 @@ const GenderPreferencePB$json = const {
   ],
 };
 
+const EmptyRequestPB$json = const {
+  '1': 'EmptyRequestPB',
+};
+
 const AuthRequestPB$json = const {
   '1': 'AuthRequestPB',
   '2': const [
