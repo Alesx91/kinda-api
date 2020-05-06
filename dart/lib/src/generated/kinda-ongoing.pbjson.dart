@@ -89,3 +89,17 @@ const SearchParamsPB$json = const {
   ],
 };
 
+const BlindChatIdPB$json = const {
+  '1': 'BlindChatIdPB',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+const UidPB$json = const {
+  '1': 'UidPB',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+

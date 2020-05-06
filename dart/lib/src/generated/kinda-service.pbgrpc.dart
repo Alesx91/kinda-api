@@ -43,6 +43,35 @@ class KindaClient extends $grpc.Client {
           ($0.EmptyRequestPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
+  static final _$deleteBlindChat =
+      $grpc.ClientMethod<$0.BlindChatIdPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/deleteBlindChat',
+          ($0.BlindChatIdPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$blockBlindChat =
+      $grpc.ClientMethod<$0.BlindChatIdPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/blockBlindChat',
+          ($0.BlindChatIdPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$setGeoLocation =
+      $grpc.ClientMethod<$0.LocationPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/setGeoLocation',
+          ($0.LocationPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$setSearchParameters =
+      $grpc.ClientMethod<$0.SearchParamsPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/setSearchParameters',
+          ($0.SearchParamsPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$getGeoDistance =
+      $grpc.ClientMethod<$0.UidPB, $1.GeoDistancePB>(
+          '/KindaGRPC.Kinda/getGeoDistance',
+          ($0.UidPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $1.GeoDistancePB.fromBuffer(value));
 
   KindaClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -86,6 +115,49 @@ class KindaClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$searchActivityNotification, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> deleteBlindChat(
+      $0.BlindChatIdPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$deleteBlindChat, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> blockBlindChat(
+      $0.BlindChatIdPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$blockBlindChat, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> setGeoLocation($0.LocationPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$setGeoLocation, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> setSearchParameters(
+      $0.SearchParamsPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$setSearchParameters, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.GeoDistancePB> getGeoDistance($0.UidPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$getGeoDistance, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -134,6 +206,41 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.EmptyRequestPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.BlindChatIdPB, $1.EmptyResponsePB>(
+        'deleteBlindChat',
+        deleteBlindChat_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.BlindChatIdPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.BlindChatIdPB, $1.EmptyResponsePB>(
+        'blockBlindChat',
+        blockBlindChat_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.BlindChatIdPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LocationPB, $1.EmptyResponsePB>(
+        'setGeoLocation',
+        setGeoLocation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.LocationPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SearchParamsPB, $1.EmptyResponsePB>(
+        'setSearchParameters',
+        setSearchParameters_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SearchParamsPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UidPB, $1.GeoDistancePB>(
+        'getGeoDistance',
+        getGeoDistance_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UidPB.fromBuffer(value),
+        ($1.GeoDistancePB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -161,6 +268,31 @@ abstract class KindaServiceBase extends $grpc.Service {
     return searchActivityNotification(call, await request);
   }
 
+  $async.Future<$1.EmptyResponsePB> deleteBlindChat_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.BlindChatIdPB> request) async {
+    return deleteBlindChat(call, await request);
+  }
+
+  $async.Future<$1.EmptyResponsePB> blockBlindChat_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.BlindChatIdPB> request) async {
+    return blockBlindChat(call, await request);
+  }
+
+  $async.Future<$1.EmptyResponsePB> setGeoLocation_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.LocationPB> request) async {
+    return setGeoLocation(call, await request);
+  }
+
+  $async.Future<$1.EmptyResponsePB> setSearchParameters_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.SearchParamsPB> request) async {
+    return setSearchParameters(call, await request);
+  }
+
+  $async.Future<$1.GeoDistancePB> getGeoDistance_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UidPB> request) async {
+    return getGeoDistance(call, await request);
+  }
+
   $async.Future<$1.AuthResponsePB> auth(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
   $async.Future<$1.EmptyResponsePB> registration(
@@ -171,4 +303,14 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.AuthRequestPB request);
   $async.Future<$1.EmptyResponsePB> searchActivityNotification(
       $grpc.ServiceCall call, $0.EmptyRequestPB request);
+  $async.Future<$1.EmptyResponsePB> deleteBlindChat(
+      $grpc.ServiceCall call, $0.BlindChatIdPB request);
+  $async.Future<$1.EmptyResponsePB> blockBlindChat(
+      $grpc.ServiceCall call, $0.BlindChatIdPB request);
+  $async.Future<$1.EmptyResponsePB> setGeoLocation(
+      $grpc.ServiceCall call, $0.LocationPB request);
+  $async.Future<$1.EmptyResponsePB> setSearchParameters(
+      $grpc.ServiceCall call, $0.SearchParamsPB request);
+  $async.Future<$1.GeoDistancePB> getGeoDistance(
+      $grpc.ServiceCall call, $0.UidPB request);
 }

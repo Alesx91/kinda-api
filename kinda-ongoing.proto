@@ -3,7 +3,8 @@ syntax = "proto3";
 package KindaGRPC;
 // [END declaration]
 
-message EmptyRequestPB {}
+message EmptyRequestPB {
+}
 
 // [START authorization]
 message AuthRequestPB {
@@ -48,3 +49,11 @@ message SearchParamsPB {
     int32 maxDistance = 4;
 }
 // [END authorization]
+
+message BlindChatIdPB {
+    string id = 1;
+}
+
+message UidPB {
+    string id = 1;
+}

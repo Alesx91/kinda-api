@@ -3,7 +3,8 @@ syntax = "proto3";
 package KindaGRPC;
 // [END declaration]
 
-message EmptyResponsePB {}
+message EmptyResponsePB {
+}
 
 // [START authorization]
 message AuthResponsePB {
@@ -29,3 +30,7 @@ message CollectionDTOValidationResponsePB {
     repeated DTOValidationResponsePB dtoValidation = 1;
 }
 // [END - authorization]
+
+message GeoDistancePB {
+    double distance = 1;
+}

@@ -12,4 +12,9 @@ service Kinda {
 
     //search
     rpc searchActivityNotification (EmptyRequestPB) returns (EmptyResponsePB);
+    rpc deleteBlindChat (BlindChatIdPB) returns (EmptyResponsePB);
+    rpc blockBlindChat (BlindChatIdPB) returns (EmptyResponsePB);
+    rpc setGeoLocation (LocationPB) returns (EmptyResponsePB);
+    rpc setSearchParameters (SearchParamsPB) returns (EmptyResponsePB);
+    rpc getGeoDistance (UidPB) returns (GeoDistancePB);
 }

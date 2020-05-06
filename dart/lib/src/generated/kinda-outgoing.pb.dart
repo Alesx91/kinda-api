@@ -151,3 +151,34 @@ class CollectionDTOValidationResponsePB extends $pb.GeneratedMessage {
   $core.List<DTOValidationResponsePB> get dtoValidation => $_getList(0);
 }
 
+class GeoDistancePB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('GeoDistancePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..a<$core.double>(1, 'distance', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  GeoDistancePB._() : super();
+  factory GeoDistancePB() => create();
+  factory GeoDistancePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GeoDistancePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GeoDistancePB clone() => GeoDistancePB()..mergeFromMessage(this);
+  GeoDistancePB copyWith(void Function(GeoDistancePB) updates) => super.copyWith((message) => updates(message as GeoDistancePB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GeoDistancePB create() => GeoDistancePB._();
+  GeoDistancePB createEmptyInstance() => create();
+  static $pb.PbList<GeoDistancePB> createRepeated() => $pb.PbList<GeoDistancePB>();
+  @$core.pragma('dart2js:noInline')
+  static GeoDistancePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GeoDistancePB>(create);
+  static GeoDistancePB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get distance => $_getN(0);
+  @$pb.TagNumber(1)
+  set distance($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDistance() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDistance() => clearField(1);
+}
+

@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-var nameRegex = regexp.MustCompile("[a-zA-Z]{3,16}")
+var nameRegex = regexp.MustCompile("[a-zA-Z]{2,16}")
 var birthdayRegex = regexp.MustCompile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$")
 
 func (m *AuthRequestPB) Validate() *PBValidation {
@@ -112,6 +112,17 @@ func (m *VerificationRequestPB) Validate() *PBValidation {
 	//validate token
 	if m.GetToken() == "" {
 		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "VerificationRequestPB", "Token", "string")
+	}
+
+	return result
+}
+
+func (m *BlindChatIdPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate token
+	if m.GetId() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "BlindChatIdPB", "Id", "string")
 	}
 
 	return result

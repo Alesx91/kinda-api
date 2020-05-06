@@ -44,3 +44,10 @@ const CollectionDTOValidationResponsePB$json = const {
   ],
 };
 
+const GeoDistancePB$json = const {
+  '1': 'GeoDistancePB',
+  '2': const [
+    const {'1': 'distance', '3': 1, '4': 1, '5': 1, '10': 'distance'},
+  ],
+};
+
