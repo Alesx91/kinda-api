@@ -17,4 +17,7 @@ service Kinda {
     rpc setGeoLocation (LocationPB) returns (EmptyResponsePB);
     rpc setSearchParameters (SearchParamsPB) returns (EmptyResponsePB);
     rpc getGeoDistance (UidPB) returns (GeoDistancePB);
+
+    //blindChat
+    rpc sendBlindChatMessage (BlindChatMessagePB) returns (EmptyResponsePB);
 }

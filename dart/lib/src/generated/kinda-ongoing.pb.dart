@@ -353,3 +353,44 @@ class UidPB extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
+class BlindMessagePB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('BlindMessagePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'blindChatId', protoName: 'blindChatId')
+    ..aOS(2, 'text')
+    ..hasRequiredFields = false
+  ;
+
+  BlindMessagePB._() : super();
+  factory BlindMessagePB() => create();
+  factory BlindMessagePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BlindMessagePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  BlindMessagePB clone() => BlindMessagePB()..mergeFromMessage(this);
+  BlindMessagePB copyWith(void Function(BlindMessagePB) updates) => super.copyWith((message) => updates(message as BlindMessagePB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static BlindMessagePB create() => BlindMessagePB._();
+  BlindMessagePB createEmptyInstance() => create();
+  static $pb.PbList<BlindMessagePB> createRepeated() => $pb.PbList<BlindMessagePB>();
+  @$core.pragma('dart2js:noInline')
+  static BlindMessagePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BlindMessagePB>(create);
+  static BlindMessagePB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get blindChatId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set blindChatId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBlindChatId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlindChatId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get text => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set text($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasText() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearText() => clearField(2);
+}
+

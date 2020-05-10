@@ -72,6 +72,12 @@ class KindaClient extends $grpc.Client {
           '/KindaGRPC.Kinda/getGeoDistance',
           ($0.UidPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $1.GeoDistancePB.fromBuffer(value));
+  static final _$sendBlindChatMessage =
+      $grpc.ClientMethod<$1.BlindChatMessagePB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/sendBlindChatMessage',
+          ($1.BlindChatMessagePB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
 
   KindaClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -161,6 +167,15 @@ class KindaClient extends $grpc.Client {
         options: options);
     return $grpc.ResponseFuture(call);
   }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> sendBlindChatMessage(
+      $1.BlindChatMessagePB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$sendBlindChatMessage, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
 }
 
 abstract class KindaServiceBase extends $grpc.Service {
@@ -241,6 +256,14 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UidPB.fromBuffer(value),
         ($1.GeoDistancePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.BlindChatMessagePB, $1.EmptyResponsePB>(
+        'sendBlindChatMessage',
+        sendBlindChatMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.BlindChatMessagePB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -293,6 +316,12 @@ abstract class KindaServiceBase extends $grpc.Service {
     return getGeoDistance(call, await request);
   }
 
+  $async.Future<$1.EmptyResponsePB> sendBlindChatMessage_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.BlindChatMessagePB> request) async {
+    return sendBlindChatMessage(call, await request);
+  }
+
   $async.Future<$1.AuthResponsePB> auth(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
   $async.Future<$1.EmptyResponsePB> registration(
@@ -313,4 +342,6 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.SearchParamsPB request);
   $async.Future<$1.GeoDistancePB> getGeoDistance(
       $grpc.ServiceCall call, $0.UidPB request);
+  $async.Future<$1.EmptyResponsePB> sendBlindChatMessage(
+      $grpc.ServiceCall call, $1.BlindChatMessagePB request);
 }
