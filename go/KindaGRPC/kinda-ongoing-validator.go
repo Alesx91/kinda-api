@@ -72,15 +72,11 @@ func (m *RegistrationRequestPB) Validate() *PBValidation {
 func (m *LocationPB) Validate() *PBValidation {
 	var result = NewPBValidation()
 
-	if m.GetLat() == 0 {
-		result.AddError(DTOValidationErrorCodePB_NOT_NULL, "RegistrationRequestPB", "Lat", ":[-90,90]")
-	} else if m.Lat < -90 || m.Lat > 90 {
+	if m.GetLat() < -90 || m.GetLat() > 90 {
 		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "RegistrationRequestPB", "Lat", ":[-90,90]")
 	}
 
-	if m.GetLon() == 0 {
-		result.AddError(DTOValidationErrorCodePB_NOT_NULL, "RegistrationRequestPB", "Lon", ":[-90,90]")
-	} else if m.Lon < -180 || m.Lon > 180 {
+	if m.GetLon() < -180 || m.GetLon() > 180 {
 		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "RegistrationRequestPB", "Lon", ":[-180,180]")
 	}
 
