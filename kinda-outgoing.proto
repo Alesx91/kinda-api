@@ -17,6 +17,7 @@ enum DTOValidationErrorCodePB {
     PATTERN_NOT_MATCHED = 2;
     NOT_ACCEPTED = 3;
     WRONG_ARRAY_SIZE = 4;
+    ENUM_NOT_ACCEPTED = 5;
 }
 
 message DTOValidationResponsePB {

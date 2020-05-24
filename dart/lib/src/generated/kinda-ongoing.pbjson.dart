@@ -22,6 +22,14 @@ const GenderPreferencePB$json = const {
   ],
 };
 
+const ChoiceEnum$json = const {
+  '1': 'ChoiceEnum',
+  '2': const [
+    const {'1': 'DISLIKE', '2': 0},
+    const {'1': 'LIKE', '2': 1},
+  ],
+};
+
 const EmptyRequestPB$json = const {
   '1': 'EmptyRequestPB',
 };
@@ -108,6 +116,14 @@ const BlindMessagePB$json = const {
   '2': const [
     const {'1': 'blindChatId', '3': 1, '4': 1, '5': 9, '10': 'blindChatId'},
     const {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
+  ],
+};
+
+const ChoicePB$json = const {
+  '1': 'ChoicePB',
+  '2': const [
+    const {'1': 'blindChatId', '3': 1, '4': 1, '5': 9, '10': 'blindChatId'},
+    const {'1': 'choice', '3': 2, '4': 1, '5': 14, '6': '.KindaGRPC.ChoiceEnum', '10': 'choice'},
   ],
 };
 

@@ -11,6 +11,10 @@ var nameRegex = regexp.MustCompile("[a-zA-Z]{2,16}")
 var birthdayRegex = regexp.MustCompile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$")
 var messageRegex = regexp.MustCompile(".{1,150}")
 
+type PBMessage interface {
+	Validate() *PBValidation
+}
+
 func (m *AuthRequestPB) Validate() *PBValidation {
 	var result = NewPBValidation()
 
@@ -153,6 +157,22 @@ func (m *BlindChatMessagePB) Validate() *PBValidation {
 	//validating text message
 	if !messageRegex.MatchString(m.GetText()) {
 		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "BlindChatMessagePB", "Text", messageRegex.String())
+	}
+
+	return result
+}
+
+func (m *ChoicePB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate id
+	if m.GetBlindChatId() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "ChoicePB", "BlindChatId", "string")
+	}
+
+	//validate choose
+	if _, ex := ChoiceEnum_name[int32(m.Choice)]; !ex {
+		result.AddError(DTOValidationErrorCodePB_ENUM_NOT_ACCEPTED, "ChoicePB", "Choice", "enum")
 	}
 
 	return result

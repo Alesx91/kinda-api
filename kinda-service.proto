@@ -20,4 +20,6 @@ service Kinda {
 
     //blindChat
     rpc sendBlindChatMessage (BlindChatMessagePB) returns (EmptyResponsePB);
+    rpc sendBlindChatTyping (BlindChatIdPB) returns (EmptyResponsePB);
+    rpc sendChoice(ChoicePB) returns (EmptyResponsePB);
 }

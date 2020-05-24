@@ -394,3 +394,44 @@ class BlindMessagePB extends $pb.GeneratedMessage {
   void clearText() => clearField(2);
 }
 
+class ChoicePB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('ChoicePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'blindChatId', protoName: 'blindChatId')
+    ..e<ChoiceEnum>(2, 'choice', $pb.PbFieldType.OE, defaultOrMaker: ChoiceEnum.DISLIKE, valueOf: ChoiceEnum.valueOf, enumValues: ChoiceEnum.values)
+    ..hasRequiredFields = false
+  ;
+
+  ChoicePB._() : super();
+  factory ChoicePB() => create();
+  factory ChoicePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChoicePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ChoicePB clone() => ChoicePB()..mergeFromMessage(this);
+  ChoicePB copyWith(void Function(ChoicePB) updates) => super.copyWith((message) => updates(message as ChoicePB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ChoicePB create() => ChoicePB._();
+  ChoicePB createEmptyInstance() => create();
+  static $pb.PbList<ChoicePB> createRepeated() => $pb.PbList<ChoicePB>();
+  @$core.pragma('dart2js:noInline')
+  static ChoicePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChoicePB>(create);
+  static ChoicePB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get blindChatId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set blindChatId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBlindChatId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlindChatId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  ChoiceEnum get choice => $_getN(1);
+  @$pb.TagNumber(2)
+  set choice(ChoiceEnum v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChoice() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChoice() => clearField(2);
+}
+

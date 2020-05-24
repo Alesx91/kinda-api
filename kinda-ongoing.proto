@@ -62,3 +62,13 @@ message BlindMessagePB {
     string blindChatId = 1;
     string text = 2;
 }
+
+enum ChoiceEnum {
+    DISLIKE = 0;
+    LIKE = 1;
+}
+
+message ChoicePB {
+    string blindChatId = 1;
+    ChoiceEnum choice = 2;
+}

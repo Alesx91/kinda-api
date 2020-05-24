@@ -41,3 +41,18 @@ class GenderPreferencePB extends $pb.ProtobufEnum {
   const GenderPreferencePB._($core.int v, $core.String n) : super(v, n);
 }
 
+class ChoiceEnum extends $pb.ProtobufEnum {
+  static const ChoiceEnum DISLIKE = ChoiceEnum._(0, 'DISLIKE');
+  static const ChoiceEnum LIKE = ChoiceEnum._(1, 'LIKE');
+
+  static const $core.List<ChoiceEnum> values = <ChoiceEnum> [
+    DISLIKE,
+    LIKE,
+  ];
+
+  static final $core.Map<$core.int, ChoiceEnum> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ChoiceEnum valueOf($core.int value) => _byValue[value];
+
+  const ChoiceEnum._($core.int v, $core.String n) : super(v, n);
+}
+
