@@ -101,7 +101,7 @@ func (m *SearchParamsPB) Validate() *PBValidation {
 	}
 
 	//validate
-	if m.GetMaxDistance() < 20 || m.GetMaxDistance() > 151 {
+	if m.GetMaxDistance() < 10 || m.GetMaxDistance() > 151 {
 		result.AddError(DTOValidationErrorCodePB_NOT_ACCEPTED, "SearchParamsPB", "MaxDistance", "int: 20 <= MaxDistance <= 151")
 	}
 
