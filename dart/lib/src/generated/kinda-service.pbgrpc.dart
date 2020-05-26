@@ -190,11 +190,9 @@ class KindaClient extends $grpc.Client {
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> sendBlindChatTyping(
-      $0.BlindChatIdPB request,
+      $async.Stream<$0.BlindChatIdPB> request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$sendBlindChatTyping, $async.Stream.fromIterable([request]),
-        options: options);
+    final call = $createCall(_$sendBlindChatTyping, request, options: options);
     return $grpc.ResponseFuture(call);
   }
 
@@ -295,8 +293,8 @@ abstract class KindaServiceBase extends $grpc.Service {
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.BlindChatIdPB, $1.EmptyResponsePB>(
         'sendBlindChatTyping',
-        sendBlindChatTyping_Pre,
-        false,
+        sendBlindChatTyping,
+        true,
         false,
         ($core.List<$core.int> value) => $0.BlindChatIdPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
@@ -365,11 +363,6 @@ abstract class KindaServiceBase extends $grpc.Service {
     return sendBlindChatMessage(call, await request);
   }
 
-  $async.Future<$1.EmptyResponsePB> sendBlindChatTyping_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.BlindChatIdPB> request) async {
-    return sendBlindChatTyping(call, await request);
-  }
-
   $async.Future<$1.EmptyResponsePB> sendChoice_Pre(
       $grpc.ServiceCall call, $async.Future<$0.ChoicePB> request) async {
     return sendChoice(call, await request);
@@ -398,7 +391,7 @@ abstract class KindaServiceBase extends $grpc.Service {
   $async.Future<$1.EmptyResponsePB> sendBlindChatMessage(
       $grpc.ServiceCall call, $1.BlindChatMessagePB request);
   $async.Future<$1.EmptyResponsePB> sendBlindChatTyping(
-      $grpc.ServiceCall call, $0.BlindChatIdPB request);
+      $grpc.ServiceCall call, $async.Stream<$0.BlindChatIdPB> request);
   $async.Future<$1.EmptyResponsePB> sendChoice(
       $grpc.ServiceCall call, $0.ChoicePB request);
 }
