@@ -353,27 +353,28 @@ class UidPB extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
-class BlindMessagePB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('BlindMessagePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+class BlindChatMessagePB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('BlindChatMessagePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..aOS(1, 'blindChatId', protoName: 'blindChatId')
-    ..aOS(2, 'text')
+    ..aOS(2, 'messageId', protoName: 'messageId')
+    ..aOS(3, 'text')
     ..hasRequiredFields = false
   ;
 
-  BlindMessagePB._() : super();
-  factory BlindMessagePB() => create();
-  factory BlindMessagePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BlindMessagePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  BlindMessagePB clone() => BlindMessagePB()..mergeFromMessage(this);
-  BlindMessagePB copyWith(void Function(BlindMessagePB) updates) => super.copyWith((message) => updates(message as BlindMessagePB));
+  BlindChatMessagePB._() : super();
+  factory BlindChatMessagePB() => create();
+  factory BlindChatMessagePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BlindChatMessagePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  BlindChatMessagePB clone() => BlindChatMessagePB()..mergeFromMessage(this);
+  BlindChatMessagePB copyWith(void Function(BlindChatMessagePB) updates) => super.copyWith((message) => updates(message as BlindChatMessagePB));
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static BlindMessagePB create() => BlindMessagePB._();
-  BlindMessagePB createEmptyInstance() => create();
-  static $pb.PbList<BlindMessagePB> createRepeated() => $pb.PbList<BlindMessagePB>();
+  static BlindChatMessagePB create() => BlindChatMessagePB._();
+  BlindChatMessagePB createEmptyInstance() => create();
+  static $pb.PbList<BlindChatMessagePB> createRepeated() => $pb.PbList<BlindChatMessagePB>();
   @$core.pragma('dart2js:noInline')
-  static BlindMessagePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BlindMessagePB>(create);
-  static BlindMessagePB _defaultInstance;
+  static BlindChatMessagePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BlindChatMessagePB>(create);
+  static BlindChatMessagePB _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get blindChatId => $_getSZ(0);
@@ -385,13 +386,104 @@ class BlindMessagePB extends $pb.GeneratedMessage {
   void clearBlindChatId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get text => $_getSZ(1);
+  $core.String get messageId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set text($core.String v) { $_setString(1, v); }
+  set messageId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasText() => $_has(1);
+  $core.bool hasMessageId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearText() => clearField(2);
+  void clearMessageId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get text => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set text($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasText() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearText() => clearField(3);
+}
+
+class ChatIdPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('ChatIdPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'id')
+    ..hasRequiredFields = false
+  ;
+
+  ChatIdPB._() : super();
+  factory ChatIdPB() => create();
+  factory ChatIdPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChatIdPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ChatIdPB clone() => ChatIdPB()..mergeFromMessage(this);
+  ChatIdPB copyWith(void Function(ChatIdPB) updates) => super.copyWith((message) => updates(message as ChatIdPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ChatIdPB create() => ChatIdPB._();
+  ChatIdPB createEmptyInstance() => create();
+  static $pb.PbList<ChatIdPB> createRepeated() => $pb.PbList<ChatIdPB>();
+  @$core.pragma('dart2js:noInline')
+  static ChatIdPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChatIdPB>(create);
+  static ChatIdPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class ChatMessagePB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('ChatMessagePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'chatId', protoName: 'chatId')
+    ..aOS(2, 'messageId', protoName: 'messageId')
+    ..aOS(3, 'text')
+    ..hasRequiredFields = false
+  ;
+
+  ChatMessagePB._() : super();
+  factory ChatMessagePB() => create();
+  factory ChatMessagePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChatMessagePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ChatMessagePB clone() => ChatMessagePB()..mergeFromMessage(this);
+  ChatMessagePB copyWith(void Function(ChatMessagePB) updates) => super.copyWith((message) => updates(message as ChatMessagePB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ChatMessagePB create() => ChatMessagePB._();
+  ChatMessagePB createEmptyInstance() => create();
+  static $pb.PbList<ChatMessagePB> createRepeated() => $pb.PbList<ChatMessagePB>();
+  @$core.pragma('dart2js:noInline')
+  static ChatMessagePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChatMessagePB>(create);
+  static ChatMessagePB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get chatId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set chatId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChatId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChatId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get messageId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set messageId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMessageId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessageId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get text => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set text($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasText() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearText() => clearField(3);
 }
 
 class ChoicePB extends $pb.GeneratedMessage {

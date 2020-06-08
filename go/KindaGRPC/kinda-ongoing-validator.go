@@ -9,7 +9,7 @@ import (
 
 var nameRegex = regexp.MustCompile("[a-zA-Z]{2,16}")
 var birthdayRegex = regexp.MustCompile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$")
-var messageRegex = regexp.MustCompile(".{1,150}")
+var messageRegex = regexp.MustCompile(".{1,1000}")
 
 type PBMessage interface {
 	Validate() *PBValidation
@@ -173,6 +173,38 @@ func (m *ChoicePB) Validate() *PBValidation {
 	//validate choose
 	if _, ex := ChoiceEnum_name[int32(m.Choice)]; !ex {
 		result.AddError(DTOValidationErrorCodePB_ENUM_NOT_ACCEPTED, "ChoicePB", "Choice", "enum")
+	}
+
+	return result
+}
+
+func (m *ChatIdPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate id
+	if m.GetId() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "ChatIdPB", "Id", "string")
+	}
+
+	return result
+}
+
+func (m *ChatMessagePB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate token
+	if m.GetChatId() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "ChatMessagePB", "ChatId", "string")
+	}
+
+	//validate messageId
+	if m.GetMessageId() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "ChatMessagePB", "MessageId", "string")
+	}
+
+	//validating text message
+	if !messageRegex.MatchString(m.GetText()) {
+		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "ChatMessagePB", "Text", messageRegex.String())
 	}
 
 	return result

@@ -52,12 +52,3 @@ const GeoDistancePB$json = const {
   ],
 };
 
-const BlindChatMessagePB$json = const {
-  '1': 'BlindChatMessagePB',
-  '2': const [
-    const {'1': 'blindChatId', '3': 1, '4': 1, '5': 9, '10': 'blindChatId'},
-    const {'1': 'messageId', '3': 2, '4': 1, '5': 9, '10': 'messageId'},
-    const {'1': 'text', '3': 3, '4': 1, '5': 9, '10': 'text'},
-  ],
-};
-

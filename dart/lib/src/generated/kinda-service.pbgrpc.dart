@@ -73,9 +73,9 @@ class KindaClient extends $grpc.Client {
           ($0.UidPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $1.GeoDistancePB.fromBuffer(value));
   static final _$sendBlindChatMessage =
-      $grpc.ClientMethod<$1.BlindChatMessagePB, $1.EmptyResponsePB>(
+      $grpc.ClientMethod<$0.BlindChatMessagePB, $1.EmptyResponsePB>(
           '/KindaGRPC.Kinda/sendBlindChatMessage',
-          ($1.BlindChatMessagePB value) => value.writeToBuffer(),
+          ($0.BlindChatMessagePB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
   static final _$sendBlindChatTyping =
@@ -88,6 +88,24 @@ class KindaClient extends $grpc.Client {
       $grpc.ClientMethod<$0.ChoicePB, $1.EmptyResponsePB>(
           '/KindaGRPC.Kinda/sendChoice',
           ($0.ChoicePB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$sendChatMessage =
+      $grpc.ClientMethod<$0.ChatMessagePB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/sendChatMessage',
+          ($0.ChatMessagePB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$deleteChat =
+      $grpc.ClientMethod<$0.ChatIdPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/deleteChat',
+          ($0.ChatIdPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$blockChat =
+      $grpc.ClientMethod<$0.ChatIdPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/blockChat',
+          ($0.ChatIdPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
 
@@ -181,7 +199,7 @@ class KindaClient extends $grpc.Client {
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> sendBlindChatMessage(
-      $1.BlindChatMessagePB request,
+      $0.BlindChatMessagePB request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$sendBlindChatMessage, $async.Stream.fromIterable([request]),
@@ -200,6 +218,30 @@ class KindaClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$sendChoice, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> sendChatMessage(
+      $0.ChatMessagePB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$sendChatMessage, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> deleteChat($0.ChatIdPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$deleteChat, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> blockChat($0.ChatIdPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(_$blockChat, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -283,13 +325,13 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UidPB.fromBuffer(value),
         ($1.GeoDistancePB value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.BlindChatMessagePB, $1.EmptyResponsePB>(
+    $addMethod($grpc.ServiceMethod<$0.BlindChatMessagePB, $1.EmptyResponsePB>(
         'sendBlindChatMessage',
         sendBlindChatMessage_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $1.BlindChatMessagePB.fromBuffer(value),
+            $0.BlindChatMessagePB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.BlindChatIdPB, $1.EmptyResponsePB>(
         'sendBlindChatTyping',
@@ -304,6 +346,27 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         false,
         ($core.List<$core.int> value) => $0.ChoicePB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ChatMessagePB, $1.EmptyResponsePB>(
+        'sendChatMessage',
+        sendChatMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ChatMessagePB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ChatIdPB, $1.EmptyResponsePB>(
+        'deleteChat',
+        deleteChat_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ChatIdPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ChatIdPB, $1.EmptyResponsePB>(
+        'blockChat',
+        blockChat_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ChatIdPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
   }
 
@@ -359,13 +422,28 @@ abstract class KindaServiceBase extends $grpc.Service {
 
   $async.Future<$1.EmptyResponsePB> sendBlindChatMessage_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$1.BlindChatMessagePB> request) async {
+      $async.Future<$0.BlindChatMessagePB> request) async {
     return sendBlindChatMessage(call, await request);
   }
 
   $async.Future<$1.EmptyResponsePB> sendChoice_Pre(
       $grpc.ServiceCall call, $async.Future<$0.ChoicePB> request) async {
     return sendChoice(call, await request);
+  }
+
+  $async.Future<$1.EmptyResponsePB> sendChatMessage_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.ChatMessagePB> request) async {
+    return sendChatMessage(call, await request);
+  }
+
+  $async.Future<$1.EmptyResponsePB> deleteChat_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.ChatIdPB> request) async {
+    return deleteChat(call, await request);
+  }
+
+  $async.Future<$1.EmptyResponsePB> blockChat_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.ChatIdPB> request) async {
+    return blockChat(call, await request);
   }
 
   $async.Future<$1.AuthResponsePB> auth(
@@ -389,9 +467,15 @@ abstract class KindaServiceBase extends $grpc.Service {
   $async.Future<$1.GeoDistancePB> getGeoDistance(
       $grpc.ServiceCall call, $0.UidPB request);
   $async.Future<$1.EmptyResponsePB> sendBlindChatMessage(
-      $grpc.ServiceCall call, $1.BlindChatMessagePB request);
+      $grpc.ServiceCall call, $0.BlindChatMessagePB request);
   $async.Future<$1.EmptyResponsePB> sendBlindChatTyping(
       $grpc.ServiceCall call, $async.Stream<$0.BlindChatIdPB> request);
   $async.Future<$1.EmptyResponsePB> sendChoice(
       $grpc.ServiceCall call, $0.ChoicePB request);
+  $async.Future<$1.EmptyResponsePB> sendChatMessage(
+      $grpc.ServiceCall call, $0.ChatMessagePB request);
+  $async.Future<$1.EmptyResponsePB> deleteChat(
+      $grpc.ServiceCall call, $0.ChatIdPB request);
+  $async.Future<$1.EmptyResponsePB> blockChat(
+      $grpc.ServiceCall call, $0.ChatIdPB request);
 }

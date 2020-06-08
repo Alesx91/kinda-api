@@ -111,11 +111,28 @@ const UidPB$json = const {
   ],
 };
 
-const BlindMessagePB$json = const {
-  '1': 'BlindMessagePB',
+const BlindChatMessagePB$json = const {
+  '1': 'BlindChatMessagePB',
   '2': const [
     const {'1': 'blindChatId', '3': 1, '4': 1, '5': 9, '10': 'blindChatId'},
-    const {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
+    const {'1': 'messageId', '3': 2, '4': 1, '5': 9, '10': 'messageId'},
+    const {'1': 'text', '3': 3, '4': 1, '5': 9, '10': 'text'},
+  ],
+};
+
+const ChatIdPB$json = const {
+  '1': 'ChatIdPB',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+const ChatMessagePB$json = const {
+  '1': 'ChatMessagePB',
+  '2': const [
+    const {'1': 'chatId', '3': 1, '4': 1, '5': 9, '10': 'chatId'},
+    const {'1': 'messageId', '3': 2, '4': 1, '5': 9, '10': 'messageId'},
+    const {'1': 'text', '3': 3, '4': 1, '5': 9, '10': 'text'},
   ],
 };
 

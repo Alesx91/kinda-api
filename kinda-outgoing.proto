@@ -35,9 +35,3 @@ message CollectionDTOValidationResponsePB {
 message GeoDistancePB {
     double distance = 1;
 }
-
-message BlindChatMessagePB {
-    string blindChatId = 1;
-    string messageId = 2;
-    string text = 3;
-}
