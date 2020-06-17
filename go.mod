@@ -1,6 +1,6 @@
 module github.com/alesx91/kinda-api
 
-go 1.13
+go 1.14
 
 require (
 	github.com/alesx91/kinda-common v1.0.1
