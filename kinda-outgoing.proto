@@ -5,6 +5,9 @@ package KindaGRPC;
 
 message EmptyResponsePB {
 }
+message StringResponsePB {
+    string value = 1;
+}
 
 // [START authorization]
 message AuthResponsePB {

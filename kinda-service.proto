@@ -21,10 +21,13 @@ service Kinda {
     //blindChat
     rpc sendBlindChatMessage (BlindChatMessagePB) returns (EmptyResponsePB);
     rpc sendBlindChatTyping (stream BlindChatIdPB) returns (EmptyResponsePB);
-    rpc sendChoice(ChoicePB) returns (EmptyResponsePB);
+    rpc sendChoice (ChoicePB) returns (EmptyResponsePB);
 
     //chat
     rpc sendChatMessage (ChatMessagePB) returns (EmptyResponsePB);
     rpc deleteChat (ChatIdPB) returns (EmptyResponsePB);
     rpc blockChat (ChatIdPB) returns (EmptyResponsePB);
+
+    //profile
+    rpc getPhotosPWD (UidPB) returns (StringResponsePB);
 }

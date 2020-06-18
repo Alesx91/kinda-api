@@ -34,6 +34,37 @@ class EmptyResponsePB extends $pb.GeneratedMessage {
   static EmptyResponsePB _defaultInstance;
 }
 
+class StringResponsePB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('StringResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'value')
+    ..hasRequiredFields = false
+  ;
+
+  StringResponsePB._() : super();
+  factory StringResponsePB() => create();
+  factory StringResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StringResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  StringResponsePB clone() => StringResponsePB()..mergeFromMessage(this);
+  StringResponsePB copyWith(void Function(StringResponsePB) updates) => super.copyWith((message) => updates(message as StringResponsePB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StringResponsePB create() => StringResponsePB._();
+  StringResponsePB createEmptyInstance() => create();
+  static $pb.PbList<StringResponsePB> createRepeated() => $pb.PbList<StringResponsePB>();
+  @$core.pragma('dart2js:noInline')
+  static StringResponsePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StringResponsePB>(create);
+  static StringResponsePB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get value => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set value($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasValue() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValue() => clearField(1);
+}
+
 class AuthResponsePB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('AuthResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..aOS(2, 'sid')

@@ -21,6 +21,13 @@ const EmptyResponsePB$json = const {
   '1': 'EmptyResponsePB',
 };
 
+const StringResponsePB$json = const {
+  '1': 'StringResponsePB',
+  '2': const [
+    const {'1': 'value', '3': 1, '4': 1, '5': 9, '10': 'value'},
+  ],
+};
+
 const AuthResponsePB$json = const {
   '1': 'AuthResponsePB',
   '2': const [
