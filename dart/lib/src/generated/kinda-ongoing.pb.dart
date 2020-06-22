@@ -34,6 +34,124 @@ class EmptyRequestPB extends $pb.GeneratedMessage {
   static EmptyRequestPB _defaultInstance;
 }
 
+class DescriptionPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('DescriptionPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'value')
+    ..hasRequiredFields = false
+  ;
+
+  DescriptionPB._() : super();
+  factory DescriptionPB() => create();
+  factory DescriptionPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DescriptionPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  DescriptionPB clone() => DescriptionPB()..mergeFromMessage(this);
+  DescriptionPB copyWith(void Function(DescriptionPB) updates) => super.copyWith((message) => updates(message as DescriptionPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static DescriptionPB create() => DescriptionPB._();
+  DescriptionPB createEmptyInstance() => create();
+  static $pb.PbList<DescriptionPB> createRepeated() => $pb.PbList<DescriptionPB>();
+  @$core.pragma('dart2js:noInline')
+  static DescriptionPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DescriptionPB>(create);
+  static DescriptionPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get value => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set value($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasValue() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValue() => clearField(1);
+}
+
+class AvatarPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('AvatarPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..a<$core.int>(1, 'value', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  AvatarPB._() : super();
+  factory AvatarPB() => create();
+  factory AvatarPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AvatarPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AvatarPB clone() => AvatarPB()..mergeFromMessage(this);
+  AvatarPB copyWith(void Function(AvatarPB) updates) => super.copyWith((message) => updates(message as AvatarPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AvatarPB create() => AvatarPB._();
+  AvatarPB createEmptyInstance() => create();
+  static $pb.PbList<AvatarPB> createRepeated() => $pb.PbList<AvatarPB>();
+  @$core.pragma('dart2js:noInline')
+  static AvatarPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AvatarPB>(create);
+  static AvatarPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get value => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set value($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasValue() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValue() => clearField(1);
+}
+
+class PhotosOrderPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('PhotosOrderPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..pPS(1, 'order')
+    ..hasRequiredFields = false
+  ;
+
+  PhotosOrderPB._() : super();
+  factory PhotosOrderPB() => create();
+  factory PhotosOrderPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PhotosOrderPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PhotosOrderPB clone() => PhotosOrderPB()..mergeFromMessage(this);
+  PhotosOrderPB copyWith(void Function(PhotosOrderPB) updates) => super.copyWith((message) => updates(message as PhotosOrderPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PhotosOrderPB create() => PhotosOrderPB._();
+  PhotosOrderPB createEmptyInstance() => create();
+  static $pb.PbList<PhotosOrderPB> createRepeated() => $pb.PbList<PhotosOrderPB>();
+  @$core.pragma('dart2js:noInline')
+  static PhotosOrderPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PhotosOrderPB>(create);
+  static PhotosOrderPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get order => $_getList(0);
+}
+
+class PhotoIdPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('PhotoIdPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'id')
+    ..hasRequiredFields = false
+  ;
+
+  PhotoIdPB._() : super();
+  factory PhotoIdPB() => create();
+  factory PhotoIdPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PhotoIdPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PhotoIdPB clone() => PhotoIdPB()..mergeFromMessage(this);
+  PhotoIdPB copyWith(void Function(PhotoIdPB) updates) => super.copyWith((message) => updates(message as PhotoIdPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PhotoIdPB create() => PhotoIdPB._();
+  PhotoIdPB createEmptyInstance() => create();
+  static $pb.PbList<PhotoIdPB> createRepeated() => $pb.PbList<PhotoIdPB>();
+  @$core.pragma('dart2js:noInline')
+  static PhotoIdPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PhotoIdPB>(create);
+  static PhotoIdPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
 class AuthRequestPB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('AuthRequestPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..aOS(1, 'token')

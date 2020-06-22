@@ -2,6 +2,7 @@ package KindaGRPC
 
 import (
 	kindaCommon "github.com/alesx91/kinda-common"
+	"github.com/alesx91/kinda-common/config"
 	"math"
 	"regexp"
 	"strconv"
@@ -9,7 +10,8 @@ import (
 
 var nameRegex = regexp.MustCompile("[a-zA-Z]{2,16}")
 var birthdayRegex = regexp.MustCompile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$")
-var messageRegex = regexp.MustCompile(".{1,1000}")
+var messageRegex = regexp.MustCompile("^.{1,1000}$")
+var descriptionRegex = regexp.MustCompile("^.{1,300}$")
 
 type PBMessage interface {
 	Validate() *PBValidation
@@ -205,6 +207,58 @@ func (m *ChatMessagePB) Validate() *PBValidation {
 	//validating text message
 	if !messageRegex.MatchString(m.GetText()) {
 		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "ChatMessagePB", "Text", messageRegex.String())
+	}
+
+	return result
+}
+
+func (m *DescriptionPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validating description
+	if !descriptionRegex.MatchString(m.GetValue()) {
+		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "DescriptionPB", "Value", descriptionRegex.String())
+	}
+
+	return result
+}
+
+func (m *AvatarPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validating avatar
+	if m.GetValue() > int32(config.Instance().Parameters.Avatar.Count) || m.GetValue() < 1 {
+		result.AddError(DTOValidationErrorCodePB_NOT_ACCEPTED, "AvatarPB", "Value",
+			"< "+strconv.Itoa(config.Instance().Parameters.Avatar.Count))
+	}
+
+	return result
+}
+
+func (m *PhotoIdPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate id
+	if m.GetId() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "PhotoIdPB", "Id", "string")
+	}
+
+	return result
+}
+
+func (m *PhotosOrderPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate new order
+	if len(m.GetOrder()) > 1 {
+		for i := 1; i < len(m.GetOrder()); i++ {
+			if m.GetOrder()[i-1] == m.GetOrder()[i] {
+				result.AddError(DTOValidationErrorCodePB_WRONG_ARRAY_UNIQUENESS, "PhotosOrderPB", "Order",
+					"array of unique elements")
+			}
+		}
+	} else {
+		result.AddError(DTOValidationErrorCodePB_NOT_ACCEPTED, "PhotosOrderPB", "Order", "cannot order one or less photos")
 	}
 
 	return result

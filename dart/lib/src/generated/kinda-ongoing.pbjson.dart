@@ -34,6 +34,34 @@ const EmptyRequestPB$json = const {
   '1': 'EmptyRequestPB',
 };
 
+const DescriptionPB$json = const {
+  '1': 'DescriptionPB',
+  '2': const [
+    const {'1': 'value', '3': 1, '4': 1, '5': 9, '10': 'value'},
+  ],
+};
+
+const AvatarPB$json = const {
+  '1': 'AvatarPB',
+  '2': const [
+    const {'1': 'value', '3': 1, '4': 1, '5': 5, '10': 'value'},
+  ],
+};
+
+const PhotosOrderPB$json = const {
+  '1': 'PhotosOrderPB',
+  '2': const [
+    const {'1': 'order', '3': 1, '4': 3, '5': 9, '10': 'order'},
+  ],
+};
+
+const PhotoIdPB$json = const {
+  '1': 'PhotoIdPB',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
 const AuthRequestPB$json = const {
   '1': 'AuthRequestPB',
   '2': const [

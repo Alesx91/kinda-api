@@ -13,7 +13,8 @@ const DTOValidationErrorCodePB$json = const {
     const {'1': 'PATTERN_NOT_MATCHED', '2': 2},
     const {'1': 'NOT_ACCEPTED', '2': 3},
     const {'1': 'WRONG_ARRAY_SIZE', '2': 4},
-    const {'1': 'ENUM_NOT_ACCEPTED', '2': 5},
+    const {'1': 'WRONG_ARRAY_UNIQUENESS', '2': 5},
+    const {'1': 'ENUM_NOT_ACCEPTED', '2': 6},
   ],
 };
 

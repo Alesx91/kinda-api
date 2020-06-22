@@ -15,7 +15,8 @@ class DTOValidationErrorCodePB extends $pb.ProtobufEnum {
   static const DTOValidationErrorCodePB PATTERN_NOT_MATCHED = DTOValidationErrorCodePB._(2, 'PATTERN_NOT_MATCHED');
   static const DTOValidationErrorCodePB NOT_ACCEPTED = DTOValidationErrorCodePB._(3, 'NOT_ACCEPTED');
   static const DTOValidationErrorCodePB WRONG_ARRAY_SIZE = DTOValidationErrorCodePB._(4, 'WRONG_ARRAY_SIZE');
-  static const DTOValidationErrorCodePB ENUM_NOT_ACCEPTED = DTOValidationErrorCodePB._(5, 'ENUM_NOT_ACCEPTED');
+  static const DTOValidationErrorCodePB WRONG_ARRAY_UNIQUENESS = DTOValidationErrorCodePB._(5, 'WRONG_ARRAY_UNIQUENESS');
+  static const DTOValidationErrorCodePB ENUM_NOT_ACCEPTED = DTOValidationErrorCodePB._(6, 'ENUM_NOT_ACCEPTED');
 
   static const $core.List<DTOValidationErrorCodePB> values = <DTOValidationErrorCodePB> [
     NOT_NULL,
@@ -23,6 +24,7 @@ class DTOValidationErrorCodePB extends $pb.ProtobufEnum {
     PATTERN_NOT_MATCHED,
     NOT_ACCEPTED,
     WRONG_ARRAY_SIZE,
+    WRONG_ARRAY_UNIQUENESS,
     ENUM_NOT_ACCEPTED,
   ];
 
