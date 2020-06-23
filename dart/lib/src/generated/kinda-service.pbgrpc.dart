@@ -156,6 +156,12 @@ class KindaClient extends $grpc.Client {
           ($0.EmptyRequestPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
+  static final _$getVersion =
+      $grpc.ClientMethod<$0.EmptyRequestPB, $1.StringResponsePB>(
+          '/KindaGRPC.Kinda/getVersion',
+          ($0.EmptyRequestPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.StringResponsePB.fromBuffer(value));
 
   KindaClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -359,6 +365,15 @@ class KindaClient extends $grpc.Client {
         options: options);
     return $grpc.ResponseFuture(call);
   }
+
+  $grpc.ResponseFuture<$1.StringResponsePB> getVersion(
+      $0.EmptyRequestPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$getVersion, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
 }
 
 abstract class KindaServiceBase extends $grpc.Service {
@@ -538,6 +553,13 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.EmptyRequestPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EmptyRequestPB, $1.StringResponsePB>(
+        'getVersion',
+        getVersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EmptyRequestPB.fromBuffer(value),
+        ($1.StringResponsePB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -656,6 +678,11 @@ abstract class KindaServiceBase extends $grpc.Service {
     return deleteProfile(call, await request);
   }
 
+  $async.Future<$1.StringResponsePB> getVersion_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.EmptyRequestPB> request) async {
+    return getVersion(call, await request);
+  }
+
   $async.Future<$1.AuthResponsePB> auth(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
   $async.Future<$1.EmptyResponsePB> registration(
@@ -703,5 +730,7 @@ abstract class KindaServiceBase extends $grpc.Service {
   $async.Future<$1.EmptyResponsePB> setDoNotDisturb(
       $grpc.ServiceCall call, $0.DoNotDisturbPB request);
   $async.Future<$1.EmptyResponsePB> deleteProfile(
+      $grpc.ServiceCall call, $0.EmptyRequestPB request);
+  $async.Future<$1.StringResponsePB> getVersion(
       $grpc.ServiceCall call, $0.EmptyRequestPB request);
 }
