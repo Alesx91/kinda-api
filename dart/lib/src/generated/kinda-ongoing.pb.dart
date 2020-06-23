@@ -152,6 +152,37 @@ class PhotoIdPB extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
+class DoNotDisturbPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('DoNotDisturbPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOB(1, 'value')
+    ..hasRequiredFields = false
+  ;
+
+  DoNotDisturbPB._() : super();
+  factory DoNotDisturbPB() => create();
+  factory DoNotDisturbPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DoNotDisturbPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  DoNotDisturbPB clone() => DoNotDisturbPB()..mergeFromMessage(this);
+  DoNotDisturbPB copyWith(void Function(DoNotDisturbPB) updates) => super.copyWith((message) => updates(message as DoNotDisturbPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static DoNotDisturbPB create() => DoNotDisturbPB._();
+  DoNotDisturbPB createEmptyInstance() => create();
+  static $pb.PbList<DoNotDisturbPB> createRepeated() => $pb.PbList<DoNotDisturbPB>();
+  @$core.pragma('dart2js:noInline')
+  static DoNotDisturbPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DoNotDisturbPB>(create);
+  static DoNotDisturbPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get value => $_getBF(0);
+  @$pb.TagNumber(1)
+  set value($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasValue() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValue() => clearField(1);
+}
+
 class AuthRequestPB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('AuthRequestPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..aOS(1, 'token')

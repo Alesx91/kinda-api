@@ -22,6 +22,10 @@ message PhotoIdPB {
     string id = 1;
 }
 
+message DoNotDisturbPB {
+    bool value = 1;
+}
+
 // [START authorization]
 message AuthRequestPB {
     string token = 1;

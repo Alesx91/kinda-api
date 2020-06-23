@@ -246,6 +246,17 @@ func (m *PhotoIdPB) Validate() *PBValidation {
 	return result
 }
 
+func (m *DoNotDisturbPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate id
+	if m.GetValue() != true && m.GetValue() != false {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "DoNotDisturbPB", "Value", "bool")
+	}
+
+	return result
+}
+
 func (m *PhotosOrderPB) Validate() *PBValidation {
 	var result = NewPBValidation()
 

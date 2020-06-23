@@ -35,4 +35,6 @@ service Kinda {
     rpc deletePhoto (PhotoIdPB) returns (EmptyResponsePB);
     rpc addPhoto (PhotoIdPB) returns (EmptyResponsePB);
     rpc setPhotosOrder (PhotosOrderPB) returns (EmptyResponsePB);
+    rpc setDoNotDisturb (DoNotDisturbPB) returns (EmptyResponsePB);
+    rpc deleteProfile (EmptyRequestPB) returns (EmptyResponsePB);
 }

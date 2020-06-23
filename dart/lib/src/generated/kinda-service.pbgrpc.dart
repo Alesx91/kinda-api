@@ -144,6 +144,18 @@ class KindaClient extends $grpc.Client {
           ($0.PhotosOrderPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
+  static final _$setDoNotDisturb =
+      $grpc.ClientMethod<$0.DoNotDisturbPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/setDoNotDisturb',
+          ($0.DoNotDisturbPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
+  static final _$deleteProfile =
+      $grpc.ClientMethod<$0.EmptyRequestPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/deleteProfile',
+          ($0.EmptyRequestPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
 
   KindaClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -329,6 +341,24 @@ class KindaClient extends $grpc.Client {
         options: options);
     return $grpc.ResponseFuture(call);
   }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> setDoNotDisturb(
+      $0.DoNotDisturbPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$setDoNotDisturb, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> deleteProfile(
+      $0.EmptyRequestPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$deleteProfile, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
 }
 
 abstract class KindaServiceBase extends $grpc.Service {
@@ -494,6 +524,20 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PhotosOrderPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DoNotDisturbPB, $1.EmptyResponsePB>(
+        'setDoNotDisturb',
+        setDoNotDisturb_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DoNotDisturbPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EmptyRequestPB, $1.EmptyResponsePB>(
+        'deleteProfile',
+        deleteProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EmptyRequestPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -602,6 +646,16 @@ abstract class KindaServiceBase extends $grpc.Service {
     return setPhotosOrder(call, await request);
   }
 
+  $async.Future<$1.EmptyResponsePB> setDoNotDisturb_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.DoNotDisturbPB> request) async {
+    return setDoNotDisturb(call, await request);
+  }
+
+  $async.Future<$1.EmptyResponsePB> deleteProfile_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.EmptyRequestPB> request) async {
+    return deleteProfile(call, await request);
+  }
+
   $async.Future<$1.AuthResponsePB> auth(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
   $async.Future<$1.EmptyResponsePB> registration(
@@ -646,4 +700,8 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.PhotoIdPB request);
   $async.Future<$1.EmptyResponsePB> setPhotosOrder(
       $grpc.ServiceCall call, $0.PhotosOrderPB request);
+  $async.Future<$1.EmptyResponsePB> setDoNotDisturb(
+      $grpc.ServiceCall call, $0.DoNotDisturbPB request);
+  $async.Future<$1.EmptyResponsePB> deleteProfile(
+      $grpc.ServiceCall call, $0.EmptyRequestPB request);
 }

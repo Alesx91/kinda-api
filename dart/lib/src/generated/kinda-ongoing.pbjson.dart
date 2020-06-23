@@ -62,6 +62,13 @@ const PhotoIdPB$json = const {
   ],
 };
 
+const DoNotDisturbPB$json = const {
+  '1': 'DoNotDisturbPB',
+  '2': const [
+    const {'1': 'value', '3': 1, '4': 1, '5': 8, '10': 'value'},
+  ],
+};
+
 const AuthRequestPB$json = const {
   '1': 'AuthRequestPB',
   '2': const [
