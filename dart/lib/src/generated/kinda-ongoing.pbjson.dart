@@ -146,6 +146,14 @@ const UidPB$json = const {
   ],
 };
 
+const PhotoLinkPB$json = const {
+  '1': 'PhotoLinkPB',
+  '2': const [
+    const {'1': 'uid', '3': 1, '4': 1, '5': 9, '10': 'uid'},
+    const {'1': 'photoId', '3': 2, '4': 1, '5': 9, '10': 'photoId'},
+  ],
+};
+
 const BlindChatMessagePB$json = const {
   '1': 'BlindChatMessagePB',
   '2': const [

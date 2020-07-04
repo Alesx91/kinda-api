@@ -108,10 +108,10 @@ class KindaClient extends $grpc.Client {
           ($0.ChatIdPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
-  static final _$getPhotosPWD =
-      $grpc.ClientMethod<$0.UidPB, $1.StringResponsePB>(
-          '/KindaGRPC.Kinda/getPhotosPWD',
-          ($0.UidPB value) => value.writeToBuffer(),
+  static final _$getPhotoLink =
+      $grpc.ClientMethod<$0.PhotoLinkPB, $1.StringResponsePB>(
+          '/KindaGRPC.Kinda/getPhotoLink',
+          ($0.PhotoLinkPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.StringResponsePB.fromBuffer(value));
   static final _$setDescription =
@@ -300,10 +300,10 @@ class KindaClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$1.StringResponsePB> getPhotosPWD($0.UidPB request,
+  $grpc.ResponseFuture<$1.StringResponsePB> getPhotoLink($0.PhotoLinkPB request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
-        _$getPhotosPWD, $async.Stream.fromIterable([request]),
+        _$getPhotoLink, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -497,12 +497,12 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ChatIdPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UidPB, $1.StringResponsePB>(
-        'getPhotosPWD',
-        getPhotosPWD_Pre,
+    $addMethod($grpc.ServiceMethod<$0.PhotoLinkPB, $1.StringResponsePB>(
+        'getPhotoLink',
+        getPhotoLink_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.UidPB.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.PhotoLinkPB.fromBuffer(value),
         ($1.StringResponsePB value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.DescriptionPB, $1.EmptyResponsePB>(
         'setDescription',
@@ -638,9 +638,9 @@ abstract class KindaServiceBase extends $grpc.Service {
     return blockChat(call, await request);
   }
 
-  $async.Future<$1.StringResponsePB> getPhotosPWD_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UidPB> request) async {
-    return getPhotosPWD(call, await request);
+  $async.Future<$1.StringResponsePB> getPhotoLink_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.PhotoLinkPB> request) async {
+    return getPhotoLink(call, await request);
   }
 
   $async.Future<$1.EmptyResponsePB> setDescription_Pre(
@@ -715,8 +715,8 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.ChatIdPB request);
   $async.Future<$1.EmptyResponsePB> blockChat(
       $grpc.ServiceCall call, $0.ChatIdPB request);
-  $async.Future<$1.StringResponsePB> getPhotosPWD(
-      $grpc.ServiceCall call, $0.UidPB request);
+  $async.Future<$1.StringResponsePB> getPhotoLink(
+      $grpc.ServiceCall call, $0.PhotoLinkPB request);
   $async.Future<$1.EmptyResponsePB> setDescription(
       $grpc.ServiceCall call, $0.DescriptionPB request);
   $async.Future<$1.EmptyResponsePB> setAvatar(

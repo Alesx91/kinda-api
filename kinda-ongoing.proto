@@ -78,6 +78,11 @@ message UidPB {
     string id = 1;
 }
 
+message PhotoLinkPB {
+    string uid = 1;
+    string photoId = 2;
+}
+
 message BlindChatMessagePB {
     string blindChatId = 1;
     string messageId = 2;

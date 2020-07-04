@@ -502,6 +502,47 @@ class UidPB extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
+class PhotoLinkPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('PhotoLinkPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'uid')
+    ..aOS(2, 'photoId', protoName: 'photoId')
+    ..hasRequiredFields = false
+  ;
+
+  PhotoLinkPB._() : super();
+  factory PhotoLinkPB() => create();
+  factory PhotoLinkPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PhotoLinkPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PhotoLinkPB clone() => PhotoLinkPB()..mergeFromMessage(this);
+  PhotoLinkPB copyWith(void Function(PhotoLinkPB) updates) => super.copyWith((message) => updates(message as PhotoLinkPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PhotoLinkPB create() => PhotoLinkPB._();
+  PhotoLinkPB createEmptyInstance() => create();
+  static $pb.PbList<PhotoLinkPB> createRepeated() => $pb.PbList<PhotoLinkPB>();
+  @$core.pragma('dart2js:noInline')
+  static PhotoLinkPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PhotoLinkPB>(create);
+  static PhotoLinkPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get uid => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set uid($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUid() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUid() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get photoId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set photoId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPhotoId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPhotoId() => clearField(2);
+}
+
 class BlindChatMessagePB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('BlindChatMessagePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..aOS(1, 'blindChatId', protoName: 'blindChatId')

@@ -275,6 +275,22 @@ func (m *PhotosOrderPB) Validate() *PBValidation {
 	return result
 }
 
+func (m *PhotoLinkPB) Validate() *PBValidation {
+	var result = NewPBValidation()
+
+	//validate id
+	if m.GetUid() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "PhotoLinkPB", "Uid", "string")
+	}
+
+	//validate photoId
+	if m.GetPhotoId() == "" {
+		result.AddError(DTOValidationErrorCodePB_NOT_EMPTY, "PhotoLinkPB", "PhotoId", "string")
+	}
+
+	return result
+}
+
 func (m *BlindChatMessagePB) TruncateText(chatTime float64, minWriteTime float64, oneCharTypingTime float64) {
 	var residualTime = math.Min(chatTime, minWriteTime)
 	var maxTextLength = int(math.Trunc(residualTime/oneCharTypingTime)) + 1

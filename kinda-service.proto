@@ -29,7 +29,7 @@ service Kinda {
     rpc blockChat (ChatIdPB) returns (EmptyResponsePB);
 
     //profile
-    rpc getPhotosPWD (UidPB) returns (StringResponsePB);
+    rpc getPhotoLink (PhotoLinkPB) returns (StringResponsePB);
     rpc setDescription (DescriptionPB) returns (EmptyResponsePB);
     rpc setAvatar (AvatarPB) returns (EmptyResponsePB);
     rpc deletePhoto (PhotoIdPB) returns (EmptyResponsePB);
