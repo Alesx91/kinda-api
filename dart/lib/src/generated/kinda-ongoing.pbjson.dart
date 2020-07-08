@@ -34,6 +34,13 @@ const EmptyRequestPB$json = const {
   '1': 'EmptyRequestPB',
 };
 
+const RegistrationTokenPB$json = const {
+  '1': 'RegistrationTokenPB',
+  '2': const [
+    const {'1': 'value', '3': 1, '4': 1, '5': 9, '10': 'value'},
+  ],
+};
+
 const DescriptionPB$json = const {
   '1': 'DescriptionPB',
   '2': const [

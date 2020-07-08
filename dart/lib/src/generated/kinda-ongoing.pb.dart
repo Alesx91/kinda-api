@@ -34,6 +34,37 @@ class EmptyRequestPB extends $pb.GeneratedMessage {
   static EmptyRequestPB _defaultInstance;
 }
 
+class RegistrationTokenPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('RegistrationTokenPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'value')
+    ..hasRequiredFields = false
+  ;
+
+  RegistrationTokenPB._() : super();
+  factory RegistrationTokenPB() => create();
+  factory RegistrationTokenPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegistrationTokenPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  RegistrationTokenPB clone() => RegistrationTokenPB()..mergeFromMessage(this);
+  RegistrationTokenPB copyWith(void Function(RegistrationTokenPB) updates) => super.copyWith((message) => updates(message as RegistrationTokenPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RegistrationTokenPB create() => RegistrationTokenPB._();
+  RegistrationTokenPB createEmptyInstance() => create();
+  static $pb.PbList<RegistrationTokenPB> createRepeated() => $pb.PbList<RegistrationTokenPB>();
+  @$core.pragma('dart2js:noInline')
+  static RegistrationTokenPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegistrationTokenPB>(create);
+  static RegistrationTokenPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get value => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set value($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasValue() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValue() => clearField(1);
+}
+
 class DescriptionPB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('DescriptionPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
     ..aOS(1, 'value')

@@ -6,6 +6,10 @@ package KindaGRPC;
 message EmptyRequestPB {
 }
 
+message RegistrationTokenPB {
+    string value = 1;
+}
+
 message DescriptionPB {
     string value = 1;
 }
