@@ -43,6 +43,7 @@ message RegistrationRequestPB {
     LocationPB location = 5;
     repeated int32 personalityTest = 6 [packed = true];
     SearchParamsPB searchParams = 7;
+    string registrationToken = 8;
 }
 
 message VerificationRequestPB {

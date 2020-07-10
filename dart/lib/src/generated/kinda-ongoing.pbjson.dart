@@ -100,6 +100,7 @@ const RegistrationRequestPB$json = const {
       '10': 'personalityTest',
     },
     const {'1': 'searchParams', '3': 7, '4': 1, '5': 11, '6': '.KindaGRPC.SearchParamsPB', '10': 'searchParams'},
+    const {'1': 'registrationToken', '3': 8, '4': 1, '5': 9, '10': 'registrationToken'},
   ],
 };
 

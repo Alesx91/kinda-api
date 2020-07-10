@@ -254,6 +254,7 @@ class RegistrationRequestPB extends $pb.GeneratedMessage {
     ..aOM<LocationPB>(5, 'location', subBuilder: LocationPB.create)
     ..p<$core.int>(6, 'personalityTest', $pb.PbFieldType.K3, protoName: 'personalityTest')
     ..aOM<SearchParamsPB>(7, 'searchParams', protoName: 'searchParams', subBuilder: SearchParamsPB.create)
+    ..aOS(8, 'registrationToken', protoName: 'registrationToken')
     ..hasRequiredFields = false
   ;
 
@@ -332,6 +333,15 @@ class RegistrationRequestPB extends $pb.GeneratedMessage {
   void clearSearchParams() => clearField(7);
   @$pb.TagNumber(7)
   SearchParamsPB ensureSearchParams() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.String get registrationToken => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set registrationToken($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasRegistrationToken() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRegistrationToken() => clearField(8);
 }
 
 class VerificationRequestPB extends $pb.GeneratedMessage {
