@@ -37,8 +37,9 @@ service Kinda {
     rpc setPhotosOrder (PhotosOrderPB) returns (EmptyResponsePB);
     rpc setDoNotDisturb (DoNotDisturbPB) returns (EmptyResponsePB);
     rpc deleteProfile (EmptyRequestPB) returns (EmptyResponsePB);
-    rpc setNotificationToken(RegistrationTokenPB) returns (EmptyResponsePB);
+    rpc setNotificationToken (RegistrationTokenPB) returns (EmptyResponsePB);
+    rpc logout (EmptyRequestPB) returns (EmptyResponsePB);
 
     //versioning
-    rpc getVersion(EmptyRequestPB) returns (StringResponsePB);
+    rpc getVersion (EmptyRequestPB) returns (StringResponsePB);
 }

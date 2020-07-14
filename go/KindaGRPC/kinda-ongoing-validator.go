@@ -11,7 +11,7 @@ import (
 var nameRegex = regexp.MustCompile("[a-zA-Z]{2,16}")
 var birthdayRegex = regexp.MustCompile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$")
 var messageRegex = regexp.MustCompile("^.{1,1000}$")
-var descriptionRegex = regexp.MustCompile("^.{1,300}$")
+var descriptionMaxLength = 300
 
 type PBMessage interface {
 	Validate() *PBValidation
@@ -216,8 +216,8 @@ func (m *DescriptionPB) Validate() *PBValidation {
 	var result = NewPBValidation()
 
 	//validating description
-	if !descriptionRegex.MatchString(m.GetValue()) {
-		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "DescriptionPB", "Value", descriptionRegex.String())
+	if len(m.GetValue()) > descriptionMaxLength {
+		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "DescriptionPB", "Value", strconv.Itoa(descriptionMaxLength))
 	}
 
 	return result

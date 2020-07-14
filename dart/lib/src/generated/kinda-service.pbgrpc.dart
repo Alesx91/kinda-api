@@ -162,6 +162,12 @@ class KindaClient extends $grpc.Client {
           ($0.RegistrationTokenPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
+  static final _$logout =
+      $grpc.ClientMethod<$0.EmptyRequestPB, $1.EmptyResponsePB>(
+          '/KindaGRPC.Kinda/logout',
+          ($0.EmptyRequestPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.EmptyResponsePB.fromBuffer(value));
   static final _$getVersion =
       $grpc.ClientMethod<$0.EmptyRequestPB, $1.StringResponsePB>(
           '/KindaGRPC.Kinda/getVersion',
@@ -381,6 +387,13 @@ class KindaClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
+  $grpc.ResponseFuture<$1.EmptyResponsePB> logout($0.EmptyRequestPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(_$logout, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
   $grpc.ResponseFuture<$1.StringResponsePB> getVersion(
       $0.EmptyRequestPB request,
       {$grpc.CallOptions options}) {
@@ -576,6 +589,13 @@ abstract class KindaServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.RegistrationTokenPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EmptyRequestPB, $1.EmptyResponsePB>(
+        'logout',
+        logout_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EmptyRequestPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.EmptyRequestPB, $1.StringResponsePB>(
         'getVersion',
         getVersion_Pre,
@@ -707,6 +727,11 @@ abstract class KindaServiceBase extends $grpc.Service {
     return setNotificationToken(call, await request);
   }
 
+  $async.Future<$1.EmptyResponsePB> logout_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.EmptyRequestPB> request) async {
+    return logout(call, await request);
+  }
+
   $async.Future<$1.StringResponsePB> getVersion_Pre(
       $grpc.ServiceCall call, $async.Future<$0.EmptyRequestPB> request) async {
     return getVersion(call, await request);
@@ -762,6 +787,8 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.EmptyRequestPB request);
   $async.Future<$1.EmptyResponsePB> setNotificationToken(
       $grpc.ServiceCall call, $0.RegistrationTokenPB request);
+  $async.Future<$1.EmptyResponsePB> logout(
+      $grpc.ServiceCall call, $0.EmptyRequestPB request);
   $async.Future<$1.StringResponsePB> getVersion(
       $grpc.ServiceCall call, $0.EmptyRequestPB request);
 }
