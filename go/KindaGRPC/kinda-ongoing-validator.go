@@ -98,7 +98,9 @@ func (m *SearchParamsPB) Validate() *PBValidation {
 	}
 
 	//validate age
-	if !(18 <= m.GetMinAge() && m.GetMinAge() < m.GetMaxAge() && m.GetMaxAge() <= 55) {
+	if !(int32(config.Instance().Parameters.Age.Min) <= m.GetMinAge() &&
+		m.GetMinAge() < m.GetMaxAge() &&
+		m.GetMaxAge() <= int32(config.Instance().Parameters.Age.Max)) {
 		result.AddError(DTOValidationErrorCodePB_NOT_ACCEPTED, "SearchParamsPB", "MinAge", "int: 18 <= MinAge < MaxAge <= 55")
 	}
 
