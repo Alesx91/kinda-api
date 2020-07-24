@@ -39,3 +39,9 @@ message CollectionDTOValidationResponsePB {
 message GeoDistancePB {
     double distance = 1;
 }
+
+message VersionPB {
+    string version = 1;
+    string googlePlayStoreLink = 2;
+    string appleStoreLink = 3;
+}

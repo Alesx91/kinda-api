@@ -213,3 +213,54 @@ class GeoDistancePB extends $pb.GeneratedMessage {
   void clearDistance() => clearField(1);
 }
 
+class VersionPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('VersionPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, 'version')
+    ..aOS(2, 'googlePlayStoreLink', protoName: 'googlePlayStoreLink')
+    ..aOS(3, 'appleStoreLink', protoName: 'appleStoreLink')
+    ..hasRequiredFields = false
+  ;
+
+  VersionPB._() : super();
+  factory VersionPB() => create();
+  factory VersionPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VersionPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  VersionPB clone() => VersionPB()..mergeFromMessage(this);
+  VersionPB copyWith(void Function(VersionPB) updates) => super.copyWith((message) => updates(message as VersionPB));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static VersionPB create() => VersionPB._();
+  VersionPB createEmptyInstance() => create();
+  static $pb.PbList<VersionPB> createRepeated() => $pb.PbList<VersionPB>();
+  @$core.pragma('dart2js:noInline')
+  static VersionPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VersionPB>(create);
+  static VersionPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get version => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set version($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasVersion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVersion() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get googlePlayStoreLink => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set googlePlayStoreLink($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGooglePlayStoreLink() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGooglePlayStoreLink() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get appleStoreLink => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set appleStoreLink($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAppleStoreLink() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAppleStoreLink() => clearField(3);
+}
+
