@@ -10,7 +10,7 @@ import (
 
 var nameRegex = regexp.MustCompile("[a-zA-Z]{2,16}")
 var birthdayRegex = regexp.MustCompile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$")
-var messageRegex = regexp.MustCompile("^.{1,1000}$")
+var messageMaxLength = 1000
 var descriptionMaxLength = 300
 
 type PBMessage interface {
@@ -159,8 +159,9 @@ func (m *BlindChatMessagePB) Validate() *PBValidation {
 	}
 
 	//validating text message
-	if !messageRegex.MatchString(m.GetText()) {
-		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "BlindChatMessagePB", "Text", messageRegex.String())
+	if len(m.GetText()) > messageMaxLength {
+		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED,
+			"BlindChatMessagePB", "Text", "length < "+strconv.Itoa(messageMaxLength))
 	}
 
 	return result
@@ -207,8 +208,9 @@ func (m *ChatMessagePB) Validate() *PBValidation {
 	}
 
 	//validating text message
-	if !messageRegex.MatchString(m.GetText()) {
-		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED, "ChatMessagePB", "Text", messageRegex.String())
+	if len(m.GetText()) > messageMaxLength {
+		result.AddError(DTOValidationErrorCodePB_PATTERN_NOT_MATCHED,
+			"ChatMessagePB", "Text", "length < "+strconv.Itoa(messageMaxLength))
 	}
 
 	return result
