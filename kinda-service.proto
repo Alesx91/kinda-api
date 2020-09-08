@@ -42,4 +42,7 @@ service Kinda {
 
     //versioning
     rpc getVersion (EmptyRequestPB) returns (VersionPB);
+
+    //extra
+    rpc log (UidPB) returns (EmptyResponsePB);
 }
