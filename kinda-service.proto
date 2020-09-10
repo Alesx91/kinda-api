@@ -27,6 +27,7 @@ service Kinda {
     rpc sendChatMessage (ChatMessagePB) returns (EmptyResponsePB);
     rpc deleteChat (ChatIdPB) returns (EmptyResponsePB);
     rpc blockChat (ChatIdPB) returns (EmptyResponsePB);
+    rpc report (UidPB) returns (EmptyResponsePB);
 
     //profile
     rpc getPhotoLink (PhotoLinkPB) returns (StringResponsePB);

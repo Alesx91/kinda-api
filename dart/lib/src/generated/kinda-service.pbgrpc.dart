@@ -108,6 +108,10 @@ class KindaClient extends $grpc.Client {
           ($0.ChatIdPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.EmptyResponsePB.fromBuffer(value));
+  static final _$report = $grpc.ClientMethod<$0.UidPB, $1.EmptyResponsePB>(
+      '/KindaGRPC.Kinda/report',
+      ($0.UidPB value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.EmptyResponsePB.fromBuffer(value));
   static final _$getPhotoLink =
       $grpc.ClientMethod<$0.PhotoLinkPB, $1.StringResponsePB>(
           '/KindaGRPC.Kinda/getPhotoLink',
@@ -311,6 +315,13 @@ class KindaClient extends $grpc.Client {
   $grpc.ResponseFuture<$1.EmptyResponsePB> blockChat($0.ChatIdPB request,
       {$grpc.CallOptions options}) {
     final call = $createCall(_$blockChat, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$1.EmptyResponsePB> report($0.UidPB request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(_$report, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -534,6 +545,13 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ChatIdPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UidPB, $1.EmptyResponsePB>(
+        'report',
+        report_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UidPB.fromBuffer(value),
+        ($1.EmptyResponsePB value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PhotoLinkPB, $1.StringResponsePB>(
         'getPhotoLink',
         getPhotoLink_Pre,
@@ -697,6 +715,11 @@ abstract class KindaServiceBase extends $grpc.Service {
     return blockChat(call, await request);
   }
 
+  $async.Future<$1.EmptyResponsePB> report_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UidPB> request) async {
+    return report(call, await request);
+  }
+
   $async.Future<$1.StringResponsePB> getPhotoLink_Pre(
       $grpc.ServiceCall call, $async.Future<$0.PhotoLinkPB> request) async {
     return getPhotoLink(call, await request);
@@ -790,6 +813,8 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.ChatIdPB request);
   $async.Future<$1.EmptyResponsePB> blockChat(
       $grpc.ServiceCall call, $0.ChatIdPB request);
+  $async.Future<$1.EmptyResponsePB> report(
+      $grpc.ServiceCall call, $0.UidPB request);
   $async.Future<$1.StringResponsePB> getPhotoLink(
       $grpc.ServiceCall call, $0.PhotoLinkPB request);
   $async.Future<$1.EmptyResponsePB> setDescription(
