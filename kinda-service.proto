@@ -46,4 +46,5 @@ service Kinda {
 
     //extra
     rpc log (UidPB) returns (EmptyResponsePB);
+    rpc areAdsActive (EmptyRequestPB) returns (BooleanResponsePB);
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROTOC_GEN_DART_PATH="C:\Users\utente\AppData\Roaming\Pub\Cache\bin\protoc-gen-dart.bat"
+PROTOC_GEN_DART_PATH="C:\src\flutter\.pub-cache\bin\protoc-gen-dart.bat"
 PROTOC_GEN_TS_PATH="C:\Users\utente\node_modules\ts-protoc-gen\bin\protoc-gen-ts.cmd"
 PROTOC_GEN_WEB_GRPC_PATH=".\bin\protoc-gen-grpc-web-1.0.7-windows-x86_64.exe"
 

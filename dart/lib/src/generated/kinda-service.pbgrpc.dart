@@ -2,8 +2,8 @@
 //  Generated code. Do not modify.
 //  source: kinda-service.proto
 //
-// @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// @dart = 2.7
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
@@ -181,246 +181,185 @@ class KindaClient extends $grpc.Client {
       '/KindaGRPC.Kinda/log',
       ($0.UidPB value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.EmptyResponsePB.fromBuffer(value));
+  static final _$areAdsActive =
+      $grpc.ClientMethod<$0.EmptyRequestPB, $1.BooleanResponsePB>(
+          '/KindaGRPC.Kinda/areAdsActive',
+          ($0.EmptyRequestPB value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.BooleanResponsePB.fromBuffer(value));
 
-  KindaClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
-      : super(channel, options: options);
+  KindaClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$1.AuthResponsePB> auth($0.AuthRequestPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$auth, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$auth, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> registration(
       $0.RegistrationRequestPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$registration, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$registration, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> verification(
       $0.VerificationRequestPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$verification, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$verification, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> acknowledgeRejection(
       $0.AuthRequestPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$acknowledgeRejection, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$acknowledgeRejection, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> searchActivityNotification(
       $0.EmptyRequestPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$searchActivityNotification, $async.Stream.fromIterable([request]),
+    return $createUnaryCall(_$searchActivityNotification, request,
         options: options);
-    return $grpc.ResponseFuture(call);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> deleteBlindChat(
       $0.BlindChatIdPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteBlindChat, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteBlindChat, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> blockBlindChat(
       $0.BlindChatIdPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$blockBlindChat, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$blockBlindChat, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> setGeoLocation($0.LocationPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$setGeoLocation, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$setGeoLocation, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> setSearchParameters(
       $0.SearchParamsPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$setSearchParameters, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$setSearchParameters, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.GeoDistancePB> getGeoDistance($0.UidPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getGeoDistance, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getGeoDistance, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> sendBlindChatMessage(
       $0.BlindChatMessagePB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$sendBlindChatMessage, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$sendBlindChatMessage, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> sendBlindChatTyping(
       $async.Stream<$0.BlindChatIdPB> request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$sendBlindChatTyping, request, options: options);
-    return $grpc.ResponseFuture(call);
+    return $createStreamingCall(_$sendBlindChatTyping, request,
+            options: options)
+        .single;
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> sendChoice($0.ChoicePB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$sendChoice, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$sendChoice, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> sendChatMessage(
       $0.ChatMessagePB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$sendChatMessage, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$sendChatMessage, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> deleteChat($0.ChatIdPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteChat, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteChat, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> blockChat($0.ChatIdPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$blockChat, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$blockChat, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> report($0.UidPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$report, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$report, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.StringResponsePB> getPhotoLink($0.PhotoLinkPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getPhotoLink, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getPhotoLink, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> setDescription(
       $0.DescriptionPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$setDescription, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$setDescription, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> setAvatar($0.AvatarPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$setAvatar, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$setAvatar, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> deletePhoto($0.PhotoIdPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deletePhoto, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deletePhoto, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> addPhoto($0.PhotoIdPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$addPhoto, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$addPhoto, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> setPhotosOrder(
       $0.PhotosOrderPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$setPhotosOrder, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$setPhotosOrder, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> setDoNotDisturb(
       $0.DoNotDisturbPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$setDoNotDisturb, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$setDoNotDisturb, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> deleteProfile(
       $0.EmptyRequestPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$deleteProfile, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$deleteProfile, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> setNotificationToken(
       $0.RegistrationTokenPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$setNotificationToken, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$setNotificationToken, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> logout($0.EmptyRequestPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$logout, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$logout, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.VersionPB> getVersion($0.EmptyRequestPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(
-        _$getVersion, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getVersion, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.EmptyResponsePB> log($0.UidPB request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$log, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$log, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.BooleanResponsePB> areAdsActive(
+      $0.EmptyRequestPB request,
+      {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$areAdsActive, request, options: options);
   }
 }
 
@@ -637,6 +576,13 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UidPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EmptyRequestPB, $1.BooleanResponsePB>(
+        'areAdsActive',
+        areAdsActive_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EmptyRequestPB.fromBuffer(value),
+        ($1.BooleanResponsePB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -781,6 +727,11 @@ abstract class KindaServiceBase extends $grpc.Service {
     return log(call, await request);
   }
 
+  $async.Future<$1.BooleanResponsePB> areAdsActive_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.EmptyRequestPB> request) async {
+    return areAdsActive(call, await request);
+  }
+
   $async.Future<$1.AuthResponsePB> auth(
       $grpc.ServiceCall call, $0.AuthRequestPB request);
   $async.Future<$1.EmptyResponsePB> registration(
@@ -839,4 +790,6 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.EmptyRequestPB request);
   $async.Future<$1.EmptyResponsePB> log(
       $grpc.ServiceCall call, $0.UidPB request);
+  $async.Future<$1.BooleanResponsePB> areAdsActive(
+      $grpc.ServiceCall call, $0.EmptyRequestPB request);
 }

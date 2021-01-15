@@ -2,8 +2,8 @@
 //  Generated code. Do not modify.
 //  source: kinda-outgoing.proto
 //
-// @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// @dart = 2.7
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
 
@@ -14,7 +14,7 @@ import 'kinda-outgoing.pbenum.dart';
 export 'kinda-outgoing.pbenum.dart';
 
 class EmptyResponsePB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('EmptyResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EmptyResponsePB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -22,8 +22,16 @@ class EmptyResponsePB extends $pb.GeneratedMessage {
   factory EmptyResponsePB() => create();
   factory EmptyResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EmptyResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   EmptyResponsePB clone() => EmptyResponsePB()..mergeFromMessage(this);
-  EmptyResponsePB copyWith(void Function(EmptyResponsePB) updates) => super.copyWith((message) => updates(message as EmptyResponsePB));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EmptyResponsePB copyWith(void Function(EmptyResponsePB) updates) => super.copyWith((message) => updates(message as EmptyResponsePB)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static EmptyResponsePB create() => EmptyResponsePB._();
@@ -35,17 +43,33 @@ class EmptyResponsePB extends $pb.GeneratedMessage {
 }
 
 class StringResponsePB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('StringResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
-    ..aOS(1, 'value')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StringResponsePB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value')
     ..hasRequiredFields = false
   ;
 
   StringResponsePB._() : super();
-  factory StringResponsePB() => create();
+  factory StringResponsePB({
+    $core.String value,
+  }) {
+    final _result = create();
+    if (value != null) {
+      _result.value = value;
+    }
+    return _result;
+  }
   factory StringResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StringResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   StringResponsePB clone() => StringResponsePB()..mergeFromMessage(this);
-  StringResponsePB copyWith(void Function(StringResponsePB) updates) => super.copyWith((message) => updates(message as StringResponsePB));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StringResponsePB copyWith(void Function(StringResponsePB) updates) => super.copyWith((message) => updates(message as StringResponsePB)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static StringResponsePB create() => StringResponsePB._();
@@ -65,18 +89,81 @@ class StringResponsePB extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
+class BooleanResponsePB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BooleanResponsePB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
+    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value')
+    ..hasRequiredFields = false
+  ;
+
+  BooleanResponsePB._() : super();
+  factory BooleanResponsePB({
+    $core.bool value,
+  }) {
+    final _result = create();
+    if (value != null) {
+      _result.value = value;
+    }
+    return _result;
+  }
+  factory BooleanResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BooleanResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BooleanResponsePB clone() => BooleanResponsePB()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BooleanResponsePB copyWith(void Function(BooleanResponsePB) updates) => super.copyWith((message) => updates(message as BooleanResponsePB)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static BooleanResponsePB create() => BooleanResponsePB._();
+  BooleanResponsePB createEmptyInstance() => create();
+  static $pb.PbList<BooleanResponsePB> createRepeated() => $pb.PbList<BooleanResponsePB>();
+  @$core.pragma('dart2js:noInline')
+  static BooleanResponsePB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BooleanResponsePB>(create);
+  static BooleanResponsePB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get value => $_getBF(0);
+  @$pb.TagNumber(1)
+  set value($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasValue() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValue() => clearField(1);
+}
+
 class AuthResponsePB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('AuthResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
-    ..aOS(2, 'sid')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AuthResponsePB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sid')
     ..hasRequiredFields = false
   ;
 
   AuthResponsePB._() : super();
-  factory AuthResponsePB() => create();
+  factory AuthResponsePB({
+    $core.String sid,
+  }) {
+    final _result = create();
+    if (sid != null) {
+      _result.sid = sid;
+    }
+    return _result;
+  }
   factory AuthResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   AuthResponsePB clone() => AuthResponsePB()..mergeFromMessage(this);
-  AuthResponsePB copyWith(void Function(AuthResponsePB) updates) => super.copyWith((message) => updates(message as AuthResponsePB));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AuthResponsePB copyWith(void Function(AuthResponsePB) updates) => super.copyWith((message) => updates(message as AuthResponsePB)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static AuthResponsePB create() => AuthResponsePB._();
@@ -97,20 +184,48 @@ class AuthResponsePB extends $pb.GeneratedMessage {
 }
 
 class DTOValidationResponsePB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('DTOValidationResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
-    ..e<DTOValidationErrorCodePB>(1, 'code', $pb.PbFieldType.OE, defaultOrMaker: DTOValidationErrorCodePB.NOT_NULL, valueOf: DTOValidationErrorCodePB.valueOf, enumValues: DTOValidationErrorCodePB.values)
-    ..aOS(2, 'dtoName', protoName: 'dtoName')
-    ..aOS(3, 'dtoField', protoName: 'dtoField')
-    ..aOS(4, 'pattern')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DTOValidationResponsePB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
+    ..e<DTOValidationErrorCodePB>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code', $pb.PbFieldType.OE, defaultOrMaker: DTOValidationErrorCodePB.NOT_NULL, valueOf: DTOValidationErrorCodePB.valueOf, enumValues: DTOValidationErrorCodePB.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dtoName', protoName: 'dtoName')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dtoField', protoName: 'dtoField')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pattern')
     ..hasRequiredFields = false
   ;
 
   DTOValidationResponsePB._() : super();
-  factory DTOValidationResponsePB() => create();
+  factory DTOValidationResponsePB({
+    DTOValidationErrorCodePB code,
+    $core.String dtoName,
+    $core.String dtoField,
+    $core.String pattern,
+  }) {
+    final _result = create();
+    if (code != null) {
+      _result.code = code;
+    }
+    if (dtoName != null) {
+      _result.dtoName = dtoName;
+    }
+    if (dtoField != null) {
+      _result.dtoField = dtoField;
+    }
+    if (pattern != null) {
+      _result.pattern = pattern;
+    }
+    return _result;
+  }
   factory DTOValidationResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DTOValidationResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   DTOValidationResponsePB clone() => DTOValidationResponsePB()..mergeFromMessage(this);
-  DTOValidationResponsePB copyWith(void Function(DTOValidationResponsePB) updates) => super.copyWith((message) => updates(message as DTOValidationResponsePB));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DTOValidationResponsePB copyWith(void Function(DTOValidationResponsePB) updates) => super.copyWith((message) => updates(message as DTOValidationResponsePB)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DTOValidationResponsePB create() => DTOValidationResponsePB._();
@@ -158,17 +273,33 @@ class DTOValidationResponsePB extends $pb.GeneratedMessage {
 }
 
 class CollectionDTOValidationResponsePB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('CollectionDTOValidationResponsePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
-    ..pc<DTOValidationResponsePB>(1, 'dtoValidation', $pb.PbFieldType.PM, protoName: 'dtoValidation', subBuilder: DTOValidationResponsePB.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CollectionDTOValidationResponsePB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
+    ..pc<DTOValidationResponsePB>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dtoValidation', $pb.PbFieldType.PM, protoName: 'dtoValidation', subBuilder: DTOValidationResponsePB.create)
     ..hasRequiredFields = false
   ;
 
   CollectionDTOValidationResponsePB._() : super();
-  factory CollectionDTOValidationResponsePB() => create();
+  factory CollectionDTOValidationResponsePB({
+    $core.Iterable<DTOValidationResponsePB> dtoValidation,
+  }) {
+    final _result = create();
+    if (dtoValidation != null) {
+      _result.dtoValidation.addAll(dtoValidation);
+    }
+    return _result;
+  }
   factory CollectionDTOValidationResponsePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CollectionDTOValidationResponsePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   CollectionDTOValidationResponsePB clone() => CollectionDTOValidationResponsePB()..mergeFromMessage(this);
-  CollectionDTOValidationResponsePB copyWith(void Function(CollectionDTOValidationResponsePB) updates) => super.copyWith((message) => updates(message as CollectionDTOValidationResponsePB));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CollectionDTOValidationResponsePB copyWith(void Function(CollectionDTOValidationResponsePB) updates) => super.copyWith((message) => updates(message as CollectionDTOValidationResponsePB)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CollectionDTOValidationResponsePB create() => CollectionDTOValidationResponsePB._();
@@ -183,17 +314,33 @@ class CollectionDTOValidationResponsePB extends $pb.GeneratedMessage {
 }
 
 class GeoDistancePB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('GeoDistancePB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
-    ..a<$core.double>(1, 'distance', $pb.PbFieldType.OD)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GeoDistancePB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
+    ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'distance', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
   GeoDistancePB._() : super();
-  factory GeoDistancePB() => create();
+  factory GeoDistancePB({
+    $core.double distance,
+  }) {
+    final _result = create();
+    if (distance != null) {
+      _result.distance = distance;
+    }
+    return _result;
+  }
   factory GeoDistancePB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GeoDistancePB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   GeoDistancePB clone() => GeoDistancePB()..mergeFromMessage(this);
-  GeoDistancePB copyWith(void Function(GeoDistancePB) updates) => super.copyWith((message) => updates(message as GeoDistancePB));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GeoDistancePB copyWith(void Function(GeoDistancePB) updates) => super.copyWith((message) => updates(message as GeoDistancePB)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GeoDistancePB create() => GeoDistancePB._();
@@ -214,19 +361,43 @@ class GeoDistancePB extends $pb.GeneratedMessage {
 }
 
 class VersionPB extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('VersionPB', package: const $pb.PackageName('KindaGRPC'), createEmptyInstance: create)
-    ..aOS(1, 'version')
-    ..aOS(2, 'googlePlayStoreLink', protoName: 'googlePlayStoreLink')
-    ..aOS(3, 'appleStoreLink', protoName: 'appleStoreLink')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'VersionPB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'googlePlayStoreLink', protoName: 'googlePlayStoreLink')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appleStoreLink', protoName: 'appleStoreLink')
     ..hasRequiredFields = false
   ;
 
   VersionPB._() : super();
-  factory VersionPB() => create();
+  factory VersionPB({
+    $core.String version,
+    $core.String googlePlayStoreLink,
+    $core.String appleStoreLink,
+  }) {
+    final _result = create();
+    if (version != null) {
+      _result.version = version;
+    }
+    if (googlePlayStoreLink != null) {
+      _result.googlePlayStoreLink = googlePlayStoreLink;
+    }
+    if (appleStoreLink != null) {
+      _result.appleStoreLink = appleStoreLink;
+    }
+    return _result;
+  }
   factory VersionPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VersionPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   VersionPB clone() => VersionPB()..mergeFromMessage(this);
-  VersionPB copyWith(void Function(VersionPB) updates) => super.copyWith((message) => updates(message as VersionPB));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  VersionPB copyWith(void Function(VersionPB) updates) => super.copyWith((message) => updates(message as VersionPB)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static VersionPB create() => VersionPB._();

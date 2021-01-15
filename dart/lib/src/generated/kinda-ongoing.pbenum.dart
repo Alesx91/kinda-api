@@ -2,16 +2,16 @@
 //  Generated code. Do not modify.
 //  source: kinda-ongoing.proto
 //
-// @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// @dart = 2.7
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
-// ignore_for_file: UNDEFINED_SHOWN_NAME,UNUSED_SHOWN_NAME
+// ignore_for_file: UNDEFINED_SHOWN_NAME
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class GenderPB extends $pb.ProtobufEnum {
-  static const GenderPB FEMALE = GenderPB._(0, 'FEMALE');
-  static const GenderPB MALE = GenderPB._(1, 'MALE');
+  static const GenderPB FEMALE = GenderPB._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEMALE');
+  static const GenderPB MALE = GenderPB._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'MALE');
 
   static const $core.List<GenderPB> values = <GenderPB> [
     FEMALE,
@@ -25,9 +25,9 @@ class GenderPB extends $pb.ProtobufEnum {
 }
 
 class GenderPreferencePB extends $pb.ProtobufEnum {
-  static const GenderPreferencePB PREF_FEMALE = GenderPreferencePB._(0, 'PREF_FEMALE');
-  static const GenderPreferencePB PREF_BOTH = GenderPreferencePB._(1, 'PREF_BOTH');
-  static const GenderPreferencePB PREF_MALE = GenderPreferencePB._(2, 'PREF_MALE');
+  static const GenderPreferencePB PREF_FEMALE = GenderPreferencePB._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PREF_FEMALE');
+  static const GenderPreferencePB PREF_BOTH = GenderPreferencePB._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PREF_BOTH');
+  static const GenderPreferencePB PREF_MALE = GenderPreferencePB._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PREF_MALE');
 
   static const $core.List<GenderPreferencePB> values = <GenderPreferencePB> [
     PREF_FEMALE,
@@ -42,8 +42,8 @@ class GenderPreferencePB extends $pb.ProtobufEnum {
 }
 
 class ChoiceEnum extends $pb.ProtobufEnum {
-  static const ChoiceEnum DISLIKE = ChoiceEnum._(0, 'DISLIKE');
-  static const ChoiceEnum LIKE = ChoiceEnum._(1, 'LIKE');
+  static const ChoiceEnum DISLIKE = ChoiceEnum._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DISLIKE');
+  static const ChoiceEnum LIKE = ChoiceEnum._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LIKE');
 
   static const $core.List<ChoiceEnum> values = <ChoiceEnum> [
     DISLIKE,

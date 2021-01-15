@@ -8,7 +8,9 @@ message EmptyResponsePB {
 message StringResponsePB {
     string value = 1;
 }
-
+message BooleanResponsePB {
+    bool value = 1;
+}
 // [START authorization]
 message AuthResponsePB {
     string sid = 2;
