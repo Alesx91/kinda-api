@@ -36,6 +36,20 @@ const BooleanResponsePB$json = const {
   ],
 };
 
+const RemoteConfigDataPB$json = const {
+  '1': 'RemoteConfigDataPB',
+  '2': const [
+    const {'1': 'AppVersion', '3': 1, '4': 1, '5': 9, '10': 'AppVersion'},
+    const {'1': 'AdUnitID', '3': 2, '4': 1, '5': 9, '10': 'AdUnitID'},
+    const {'1': 'GeneralAdsOn', '3': 3, '4': 1, '5': 8, '10': 'GeneralAdsOn'},
+    const {'1': 'RosterAdsOn', '3': 4, '4': 1, '5': 8, '10': 'RosterAdsOn'},
+    const {'1': 'BeforeChoiceAdsOn', '3': 5, '4': 1, '5': 8, '10': 'BeforeChoiceAdsOn'},
+    const {'1': 'AfterChoiceAdsOn', '3': 6, '4': 1, '5': 8, '10': 'AfterChoiceAdsOn'},
+    const {'1': 'ProfilePicAdsOn', '3': 7, '4': 1, '5': 8, '10': 'ProfilePicAdsOn'},
+    const {'1': 'FullPageProfilePicAdsOn', '3': 8, '4': 1, '5': 8, '10': 'FullPageProfilePicAdsOn'},
+  ],
+};
+
 const AuthResponsePB$json = const {
   '1': 'AuthResponsePB',
   '2': const [

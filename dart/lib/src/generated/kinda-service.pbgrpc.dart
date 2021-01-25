@@ -181,12 +181,12 @@ class KindaClient extends $grpc.Client {
       '/KindaGRPC.Kinda/log',
       ($0.UidPB value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.EmptyResponsePB.fromBuffer(value));
-  static final _$areAdsActive =
-      $grpc.ClientMethod<$0.EmptyRequestPB, $1.BooleanResponsePB>(
-          '/KindaGRPC.Kinda/areAdsActive',
+  static final _$getRemoteConfigData =
+      $grpc.ClientMethod<$0.EmptyRequestPB, $1.RemoteConfigDataPB>(
+          '/KindaGRPC.Kinda/getRemoteConfigData',
           ($0.EmptyRequestPB value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $1.BooleanResponsePB.fromBuffer(value));
+              $1.RemoteConfigDataPB.fromBuffer(value));
 
   KindaClient($grpc.ClientChannel channel,
       {$grpc.CallOptions options,
@@ -356,10 +356,10 @@ class KindaClient extends $grpc.Client {
     return $createUnaryCall(_$log, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.BooleanResponsePB> areAdsActive(
+  $grpc.ResponseFuture<$1.RemoteConfigDataPB> getRemoteConfigData(
       $0.EmptyRequestPB request,
       {$grpc.CallOptions options}) {
-    return $createUnaryCall(_$areAdsActive, request, options: options);
+    return $createUnaryCall(_$getRemoteConfigData, request, options: options);
   }
 }
 
@@ -576,13 +576,13 @@ abstract class KindaServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UidPB.fromBuffer(value),
         ($1.EmptyResponsePB value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.EmptyRequestPB, $1.BooleanResponsePB>(
-        'areAdsActive',
-        areAdsActive_Pre,
+    $addMethod($grpc.ServiceMethod<$0.EmptyRequestPB, $1.RemoteConfigDataPB>(
+        'getRemoteConfigData',
+        getRemoteConfigData_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.EmptyRequestPB.fromBuffer(value),
-        ($1.BooleanResponsePB value) => value.writeToBuffer()));
+        ($1.RemoteConfigDataPB value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.AuthResponsePB> auth_Pre(
@@ -727,9 +727,9 @@ abstract class KindaServiceBase extends $grpc.Service {
     return log(call, await request);
   }
 
-  $async.Future<$1.BooleanResponsePB> areAdsActive_Pre(
+  $async.Future<$1.RemoteConfigDataPB> getRemoteConfigData_Pre(
       $grpc.ServiceCall call, $async.Future<$0.EmptyRequestPB> request) async {
-    return areAdsActive(call, await request);
+    return getRemoteConfigData(call, await request);
   }
 
   $async.Future<$1.AuthResponsePB> auth(
@@ -790,6 +790,6 @@ abstract class KindaServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.EmptyRequestPB request);
   $async.Future<$1.EmptyResponsePB> log(
       $grpc.ServiceCall call, $0.UidPB request);
-  $async.Future<$1.BooleanResponsePB> areAdsActive(
+  $async.Future<$1.RemoteConfigDataPB> getRemoteConfigData(
       $grpc.ServiceCall call, $0.EmptyRequestPB request);
 }

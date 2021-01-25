@@ -136,6 +136,151 @@ class BooleanResponsePB extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
+class RemoteConfigDataPB extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoteConfigDataPB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'AppVersion', protoName: 'AppVersion')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'AdUnitID', protoName: 'AdUnitID')
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'GeneralAdsOn', protoName: 'GeneralAdsOn')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'RosterAdsOn', protoName: 'RosterAdsOn')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'BeforeChoiceAdsOn', protoName: 'BeforeChoiceAdsOn')
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'AfterChoiceAdsOn', protoName: 'AfterChoiceAdsOn')
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ProfilePicAdsOn', protoName: 'ProfilePicAdsOn')
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'FullPageProfilePicAdsOn', protoName: 'FullPageProfilePicAdsOn')
+    ..hasRequiredFields = false
+  ;
+
+  RemoteConfigDataPB._() : super();
+  factory RemoteConfigDataPB({
+    $core.String appVersion,
+    $core.String adUnitID,
+    $core.bool generalAdsOn,
+    $core.bool rosterAdsOn,
+    $core.bool beforeChoiceAdsOn,
+    $core.bool afterChoiceAdsOn,
+    $core.bool profilePicAdsOn,
+    $core.bool fullPageProfilePicAdsOn,
+  }) {
+    final _result = create();
+    if (appVersion != null) {
+      _result.appVersion = appVersion;
+    }
+    if (adUnitID != null) {
+      _result.adUnitID = adUnitID;
+    }
+    if (generalAdsOn != null) {
+      _result.generalAdsOn = generalAdsOn;
+    }
+    if (rosterAdsOn != null) {
+      _result.rosterAdsOn = rosterAdsOn;
+    }
+    if (beforeChoiceAdsOn != null) {
+      _result.beforeChoiceAdsOn = beforeChoiceAdsOn;
+    }
+    if (afterChoiceAdsOn != null) {
+      _result.afterChoiceAdsOn = afterChoiceAdsOn;
+    }
+    if (profilePicAdsOn != null) {
+      _result.profilePicAdsOn = profilePicAdsOn;
+    }
+    if (fullPageProfilePicAdsOn != null) {
+      _result.fullPageProfilePicAdsOn = fullPageProfilePicAdsOn;
+    }
+    return _result;
+  }
+  factory RemoteConfigDataPB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoteConfigDataPB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoteConfigDataPB clone() => RemoteConfigDataPB()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoteConfigDataPB copyWith(void Function(RemoteConfigDataPB) updates) => super.copyWith((message) => updates(message as RemoteConfigDataPB)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RemoteConfigDataPB create() => RemoteConfigDataPB._();
+  RemoteConfigDataPB createEmptyInstance() => create();
+  static $pb.PbList<RemoteConfigDataPB> createRepeated() => $pb.PbList<RemoteConfigDataPB>();
+  @$core.pragma('dart2js:noInline')
+  static RemoteConfigDataPB getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoteConfigDataPB>(create);
+  static RemoteConfigDataPB _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appVersion => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appVersion($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppVersion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppVersion() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get adUnitID => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set adUnitID($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAdUnitID() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAdUnitID() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get generalAdsOn => $_getBF(2);
+  @$pb.TagNumber(3)
+  set generalAdsOn($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasGeneralAdsOn() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGeneralAdsOn() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get rosterAdsOn => $_getBF(3);
+  @$pb.TagNumber(4)
+  set rosterAdsOn($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRosterAdsOn() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRosterAdsOn() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get beforeChoiceAdsOn => $_getBF(4);
+  @$pb.TagNumber(5)
+  set beforeChoiceAdsOn($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasBeforeChoiceAdsOn() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBeforeChoiceAdsOn() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get afterChoiceAdsOn => $_getBF(5);
+  @$pb.TagNumber(6)
+  set afterChoiceAdsOn($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAfterChoiceAdsOn() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAfterChoiceAdsOn() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get profilePicAdsOn => $_getBF(6);
+  @$pb.TagNumber(7)
+  set profilePicAdsOn($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasProfilePicAdsOn() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProfilePicAdsOn() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get fullPageProfilePicAdsOn => $_getBF(7);
+  @$pb.TagNumber(8)
+  set fullPageProfilePicAdsOn($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasFullPageProfilePicAdsOn() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFullPageProfilePicAdsOn() => clearField(8);
+}
+
 class AuthResponsePB extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AuthResponsePB', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'KindaGRPC'), createEmptyInstance: create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sid')

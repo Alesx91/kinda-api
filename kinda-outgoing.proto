@@ -11,6 +11,17 @@ message StringResponsePB {
 message BooleanResponsePB {
     bool value = 1;
 }
+message RemoteConfigDataPB {
+    string AppVersion = 1;
+    string AdUnitID = 2;
+    bool GeneralAdsOn = 3;
+    bool RosterAdsOn = 4;
+    bool BeforeChoiceAdsOn = 5;
+    bool AfterChoiceAdsOn = 6;
+    bool ProfilePicAdsOn = 7;
+    bool FullPageProfilePicAdsOn = 8;
+}
+
 // [START authorization]
 message AuthResponsePB {
     string sid = 2;
